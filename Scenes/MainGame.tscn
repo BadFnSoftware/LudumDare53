@@ -1,14 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmojwdgcp3vai"]
+[gd_scene load_steps=9 format=3 uid="uid://bmojwdgcp3vai"]
 
 [ext_resource type="Texture2D" uid="uid://c27ggghh06jor" path="res://Assets/Scenes/MainGame/Spr_SortingScreen_01.png" id="1_b2qmk"]
 [ext_resource type="Script" path="res://Scripts/Utilities/MainGameEvents.gd" id="1_y1lun"]
 [ext_resource type="Texture2D" uid="uid://b6vkxrkv6vot1" path="res://Assets/Scenes/MainGame/Spr_Desk_01.png" id="3_0cqi6"]
 [ext_resource type="Texture2D" uid="uid://dti3t81ualh4q" path="res://Assets/UI/MainGame/Buttons/Spr_MailCart_01.png" id="4_w3pke"]
 [ext_resource type="Texture2D" uid="uid://cx0kky5l2mx42" path="res://Assets/Objects/Spr_Mail_01.png" id="5_q1nwr"]
+[ext_resource type="Texture2D" uid="uid://dndqnd6fa2t0n" path="res://Assets/Objects/Spr_package_01.png" id="6_2mtx8"]
+[ext_resource type="FontFile" uid="uid://br16r50alhowl" path="res://Assets/Fonts/PressStart2P/PressStart2P.otf" id="6_qrfyu"]
+[ext_resource type="Texture2D" uid="uid://c0m5qkbv8hu6t" path="res://Assets/UI/MainGame/Buttons/Spr_xraybutton_01.png" id="7_msax4"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Control" type="Control" parent="."]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
@@ -144,18 +148,83 @@ offset_bottom = 85.0
 flat = true
 metadata/RackSlotId = 1
 
-[node name="Envelope" type="TextureRect" parent="Control"]
+[node name="Envelope" type="TextureButton" parent="Control"]
 unique_name_in_owner = true
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = 334.0
-offset_top = 229.0
-offset_right = 374.0
-offset_bottom = 269.0
+offset_left = 402.0
+offset_top = 219.0
+offset_right = 442.0
+offset_bottom = 259.0
 scale = Vector2(3, 3)
-texture = ExtResource("5_q1nwr")
-stretch_mode = 2
+texture_normal = ExtResource("5_q1nwr")
+
+[node name="Package" type="TextureButton" parent="Control"]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 390.0
+offset_top = 190.0
+offset_right = 454.0
+offset_bottom = 254.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("6_2mtx8")
+
+[node name="ScanningButtonDisabled" type="TextureButton" parent="Control"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 0
+offset_left = 612.0
+offset_top = 128.0
+offset_right = 676.0
+offset_bottom = 168.0
+disabled = true
+texture_normal = ExtResource("7_msax4")
+
+[node name="ScanningButton" type="TextureButton" parent="Control"]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 577.0
+offset_top = 128.0
+offset_right = 641.0
+offset_bottom = 168.0
+texture_normal = ExtResource("7_msax4")
+
+[node name="EnvelopeNamePanel" type="Panel" parent="Control"]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 318.0
+offset_top = 166.0
+offset_right = 593.0
+offset_bottom = 256.0
+
+[node name="CustomerName" type="RichTextLabel" parent="Control/EnvelopeNamePanel"]
+unique_name_in_owner = true
+texture_filter = 1
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -11.5
+offset_right = 56.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 16
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
 
 [connection signal="pressed" from="Control/SortingBin" to="Control" method="_on_sorting_bin_pressed"]
 [connection signal="pressed" from="Control/ButtonXZ" to="Control" method="_on_button_rack_slot_pressed"]
@@ -170,3 +239,9 @@ stretch_mode = 2
 [connection signal="pressed" from="Control/ButtonEF" to="Control" method="_on_button_rack_slot_pressed"]
 [connection signal="pressed" from="Control/ButtonCD" to="Control" method="_on_button_rack_slot_pressed"]
 [connection signal="pressed" from="Control/ButtonAB" to="Control" method="_on_button_rack_slot_pressed"]
+[connection signal="button_down" from="Control/Envelope" to="Control" method="_on_envelope_button_down"]
+[connection signal="button_up" from="Control/Envelope" to="Control" method="_on_envelope_button_up"]
+[connection signal="button_down" from="Control/Package" to="Control" method="_on_envelope_button_down"]
+[connection signal="button_up" from="Control/Package" to="Control" method="_on_envelope_button_up"]
+[connection signal="pressed" from="Control/Package" to="Control" method="_on_envelope_pressed"]
+[connection signal="pressed" from="Control/ScanningButton" to="Control" method="_on_scanning_button_pressed"]

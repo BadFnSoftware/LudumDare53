@@ -28,6 +28,11 @@ func generateRandomEnvelope():
 		var rng = RandomNumberGenerator.new()
 		var index = rng.randi_range(0, maxRng)
 		var randomEnvelope = Vars.Player.AvailEnvelopes[index]
+		
+		if maxRng > 0:
+			Vars.Player.AvailEnvelopes.remove_at (index)
+		else:
+			Vars.Player.AvailEnvelopes = []
 
 		return randomEnvelope
 
@@ -42,7 +47,10 @@ func generateRandomCustomer():
 		var index = rng.randi_range(0, maxRng)
 		var randomCustomer = Vars.AvailCustomers[index]
 		
-		Vars.AvailCustomers.remove(index)
+		if maxRng == 0:
+			Vars.Player.AvailCustomers = []
+		else:
+			Vars.Player.AvailCustomers.remove_at (index)
 
 		return randomCustomer
 

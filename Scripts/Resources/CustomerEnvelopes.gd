@@ -8,8 +8,8 @@ extends Resource
 
 @export_group("Configuration")
 @export var RackSlotId: int
-@export var EnvelopeId: int
 @export var IsPackage: bool
 @export var IsDangerous: bool
+@export var IsScanned := false
 @export_file var Contents
 @export_file var CustomerModel

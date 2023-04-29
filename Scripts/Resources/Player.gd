@@ -6,6 +6,7 @@ extends Resource
 @export var NumEnvelopesSorted := 0
 @export var NumPackagesSorted := 0
 @export var NumDangerousPackagesSorted := 0
+@export var NumDangerousPackageMistakes := 0
 @export var NumMistakes := 0
 @export var NumAngryCustomers := 0
 @export var NumContentCustomers := 0

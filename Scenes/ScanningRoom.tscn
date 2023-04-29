@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc2bfnntfd00o"]
+
+[ext_resource type="Texture2D" uid="uid://333iate5qr36" path="res://Assets/Scenes/ScanningRoom/Spr_ScannerScreen_01.png" id="1_usrc8"]
+
+[node name="ScanningRoom" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Scanner" type="TextureRect" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 90.0
+scale = Vector2(4, 4)
+texture = ExtResource("1_usrc8")
+stretch_mode = 2

@@ -9,6 +9,7 @@
 [node name="MainMenu" type="Node2D"]
 
 [node name="Control" type="Control" parent="."]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
