@@ -1,16 +1,20 @@
-class_name Player
+class_name PlayerClass
 extends Resource
 
-@export var HasEnvelope: bool
+#@export var HasEnvelope := false
 @export var CurrentEnvelope: CustomerEnvelopes
-@export var NumEnvelopesSorted: int
-@export var NumPackagesSorted: int
-@export var NumDangerousPackagesSorted: int
-@export var NumMistakes: int
-@export var NumAngryCustomers: int
-@export var NumContentCustomers: int
-@export var NumHappyCustomers: int
+@export var NumEnvelopesSorted := 0
+@export var NumPackagesSorted := 0
+@export var NumDangerousPackagesSorted := 0
+@export var NumMistakes := 0
+@export var NumAngryCustomers := 0
+@export var NumContentCustomers := 0
+@export var NumHappyCustomers := 0
 @export var CustomerComplaintList := []
 @export var AngryCustomerList := []
 @export var ContentCustomerList := []
 @export var HappyCustomerList := []
+@export var AvailCustomers := []
+@export var AvailEnvelopes := []
+@export var NumEnvelopesAvail: int
+@export var NumTotalEnvelopes: int

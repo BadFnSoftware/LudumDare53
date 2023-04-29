@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmojwdgcp3vai"]
+[gd_scene load_steps=6 format=3 uid="uid://bmojwdgcp3vai"]
 
 [ext_resource type="Texture2D" uid="uid://c27ggghh06jor" path="res://Assets/Scenes/MainGame/Spr_SortingScreen_01.png" id="1_b2qmk"]
 [ext_resource type="Script" path="res://Scripts/Utilities/MainGameEvents.gd" id="1_y1lun"]
 [ext_resource type="Texture2D" uid="uid://b6vkxrkv6vot1" path="res://Assets/Scenes/MainGame/Spr_Desk_01.png" id="3_0cqi6"]
 [ext_resource type="Texture2D" uid="uid://dti3t81ualh4q" path="res://Assets/UI/MainGame/Buttons/Spr_MailCart_01.png" id="4_w3pke"]
+[ext_resource type="Texture2D" uid="uid://cx0kky5l2mx42" path="res://Assets/Objects/Spr_Mail_01.png" id="5_q1nwr"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -47,12 +48,12 @@ scale = Vector2(4, 4)
 texture_normal = ExtResource("4_w3pke")
 
 [node name="ButtonXZ" type="Button" parent="Control"]
-offset_left = 479.0
+offset_left = 480.0
 offset_top = 173.0
-offset_right = 616.0
+offset_right = 617.0
 offset_bottom = 242.0
 flat = true
-metadata/RackSlotId = 0
+metadata/RackSlotId = 12
 
 [node name="ButtonUW" type="Button" parent="Control"]
 offset_left = 325.0
@@ -60,7 +61,7 @@ offset_top = 172.0
 offset_right = 464.0
 offset_bottom = 241.0
 flat = true
-metadata/RackSlotId = 0
+metadata/RackSlotId = 11
 
 [node name="ButtonST" type="Button" parent="Control"]
 offset_left = 176.0
@@ -68,7 +69,7 @@ offset_top = 173.0
 offset_right = 316.0
 offset_bottom = 242.0
 flat = true
-metadata/RackSlotId = 0
+metadata/RackSlotId = 10
 
 [node name="ButtonQR" type="Button" parent="Control"]
 offset_left = 24.0
@@ -76,7 +77,7 @@ offset_top = 173.0
 offset_right = 161.0
 offset_bottom = 242.0
 flat = true
-metadata/RackSlotId = 0
+metadata/RackSlotId = 9
 
 [node name="ButtonOP" type="Button" parent="Control"]
 offset_left = 479.0
@@ -84,7 +85,7 @@ offset_top = 92.0
 offset_right = 616.0
 offset_bottom = 161.0
 flat = true
-metadata/RackSlotId = 0
+metadata/RackSlotId = 8
 
 [node name="ButtonMN" type="Button" parent="Control"]
 offset_left = 325.0
@@ -92,7 +93,7 @@ offset_top = 91.0
 offset_right = 464.0
 offset_bottom = 160.0
 flat = true
-metadata/RackSlotId = 0
+metadata/RackSlotId = 7
 
 [node name="ButtonKL" type="Button" parent="Control"]
 offset_left = 176.0
@@ -100,7 +101,7 @@ offset_top = 91.0
 offset_right = 316.0
 offset_bottom = 160.0
 flat = true
-metadata/RackSlotId = 0
+metadata/RackSlotId = 6
 
 [node name="ButtonIJ" type="Button" parent="Control"]
 offset_left = 23.0
@@ -108,7 +109,7 @@ offset_top = 92.0
 offset_right = 160.0
 offset_bottom = 161.0
 flat = true
-metadata/RackSlotId = 0
+metadata/RackSlotId = 5
 
 [node name="ButtonGH" type="Button" parent="Control"]
 offset_left = 479.0
@@ -116,7 +117,7 @@ offset_top = 15.0
 offset_right = 616.0
 offset_bottom = 84.0
 flat = true
-metadata/RackSlotId = 0
+metadata/RackSlotId = 4
 
 [node name="ButtonEF" type="Button" parent="Control"]
 offset_left = 324.0
@@ -124,7 +125,7 @@ offset_top = 15.0
 offset_right = 464.0
 offset_bottom = 84.0
 flat = true
-metadata/RackSlotId = 0
+metadata/RackSlotId = 3
 
 [node name="ButtonCD" type="Button" parent="Control"]
 offset_left = 176.0
@@ -132,7 +133,7 @@ offset_top = 16.0
 offset_right = 315.0
 offset_bottom = 85.0
 flat = true
-metadata/RackSlotId = 0
+metadata/RackSlotId = 2
 
 [node name="ButtonAB" type="Button" parent="Control"]
 layout_mode = 0
@@ -141,7 +142,20 @@ offset_top = 16.0
 offset_right = 161.0
 offset_bottom = 85.0
 flat = true
-metadata/RackSlotId = 0
+metadata/RackSlotId = 1
+
+[node name="Envelope" type="TextureRect" parent="Control"]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 334.0
+offset_top = 229.0
+offset_right = 374.0
+offset_bottom = 269.0
+scale = Vector2(3, 3)
+texture = ExtResource("5_q1nwr")
+stretch_mode = 2
 
 [connection signal="pressed" from="Control/SortingBin" to="Control" method="_on_sorting_bin_pressed"]
 [connection signal="pressed" from="Control/ButtonXZ" to="Control" method="_on_button_rack_slot_pressed"]

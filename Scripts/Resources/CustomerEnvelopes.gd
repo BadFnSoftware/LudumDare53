@@ -12,3 +12,4 @@ extends Resource
 @export var IsPackage: bool
 @export var IsDangerous: bool
 @export_file var Contents
+@export_file var CustomerModel

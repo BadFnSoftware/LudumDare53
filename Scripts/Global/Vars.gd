@@ -6,3 +6,5 @@ const AvailableGenderTypes = {
 }
 
 enum GenderTypes { MALE, FEMALE }
+
+var Player: PlayerClass
