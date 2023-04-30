@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://cfp432ciweotg" path="res://Assets/Objects/Spr_Clock_01.png" id="8_odlrs"]
 
 [node name="Node2D" type="Node2D"]
-metadata/_edit_vertical_guides_ = [126.0, 444.0]
 metadata/_edit_horizontal_guides_ = [189.0, 202.0, 215.0, 229.0, 243.0]
 
 [node name="Control" type="Control" parent="."]
@@ -341,9 +340,9 @@ autowrap_mode = 2
 
 [node name="EnvelopesSorted" type="RichTextLabel" parent="Control/EndPanel"]
 layout_mode = 0
-offset_left = 44.0
+offset_left = 74.0
 offset_top = 146.0
-offset_right = 171.0
+offset_right = 201.0
 offset_bottom = 157.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
@@ -355,9 +354,9 @@ autowrap_mode = 0
 [node name="NumEnvelopesSorted" type="RichTextLabel" parent="Control/EndPanel"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 362.0
+offset_left = 392.0
 offset_top = 146.0
-offset_right = 495.0
+offset_right = 525.0
 offset_bottom = 157.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
@@ -368,9 +367,9 @@ autowrap_mode = 0
 
 [node name="PackagesSorted" type="RichTextLabel" parent="Control/EndPanel"]
 layout_mode = 0
-offset_left = 44.0
+offset_left = 74.0
 offset_top = 159.0
-offset_right = 156.0
+offset_right = 186.0
 offset_bottom = 169.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
@@ -382,9 +381,9 @@ autowrap_mode = 0
 [node name="NumPackagesSorted" type="RichTextLabel" parent="Control/EndPanel"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 362.0
+offset_left = 392.0
 offset_top = 159.0
-offset_right = 495.0
+offset_right = 525.0
 offset_bottom = 169.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
@@ -395,9 +394,9 @@ autowrap_mode = 0
 
 [node name="SortingMistakes" type="RichTextLabel" parent="Control/EndPanel"]
 layout_mode = 0
-offset_left = 44.0
+offset_left = 74.0
 offset_top = 172.0
-offset_right = 163.0
+offset_right = 193.0
 offset_bottom = 181.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
@@ -409,9 +408,9 @@ autowrap_mode = 0
 [node name="NumSortingMistakes" type="RichTextLabel" parent="Control/EndPanel"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 362.0
+offset_left = 392.0
 offset_top = 172.0
-offset_right = 496.0
+offset_right = 526.0
 offset_bottom = 181.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
@@ -422,9 +421,9 @@ autowrap_mode = 0
 
 [node name="DangerousPackagesSorted" type="RichTextLabel" parent="Control/EndPanel"]
 layout_mode = 0
-offset_left = 44.0
+offset_left = 74.0
 offset_top = 186.0
-offset_right = 226.0
+offset_right = 256.0
 offset_bottom = 196.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
@@ -436,9 +435,9 @@ autowrap_mode = 0
 [node name="NumDangerousPackagesSorted" type="RichTextLabel" parent="Control/EndPanel"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 362.0
+offset_left = 392.0
 offset_top = 186.0
-offset_right = 492.0
+offset_right = 522.0
 offset_bottom = 196.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
@@ -449,9 +448,9 @@ autowrap_mode = 0
 
 [node name="DangerousPackageSortingMistakes" type="RichTextLabel" parent="Control/EndPanel"]
 layout_mode = 0
-offset_left = 44.0
+offset_left = 74.0
 offset_top = 200.0
-offset_right = 289.0
+offset_right = 319.0
 offset_bottom = 210.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
@@ -463,9 +462,9 @@ autowrap_mode = 0
 [node name="NumDangerousPackageSortingMistakes" type="RichTextLabel" parent="Control/EndPanel"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 362.0
+offset_left = 392.0
 offset_top = 200.0
-offset_right = 493.0
+offset_right = 523.0
 offset_bottom = 210.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7

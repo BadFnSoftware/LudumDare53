@@ -30,6 +30,18 @@ func _ready():
 	Vars.TickerData.GameInProgress = true
 	
 	CommonUtils.updateDisplayClock()
+	
+	if Vars.Player.CurrentEnvelope != null:
+		var PlayerNameText = str(Vars.Player.CurrentEnvelope.FirstName + " " + Vars.Player.CurrentEnvelope.LastName)
+
+		CustomerName.set_text(PlayerNameText)
+
+		if Vars.Player.CurrentEnvelope.IsPackage == true:
+			ScanningButton.visible = true
+			ScanningButtonDisabled.visible = false
+			Package.visible = true
+		else:
+			Envelope.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -72,6 +84,7 @@ func _on_button_rack_slot_pressed():
 		if Vars.Player.NumEnvelopesAvail <= 0:
 			CommonUtils.setEndPanelDisplay()
 			Vars.EndPanel.visible = true
+			Vars.TickerData.GameInProgress = false
 	else:
 		print("No evelope available to sort!")
 
