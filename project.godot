@@ -22,6 +22,7 @@ run/size/viewport_width=72
 Cursor="*res://Scripts/Global/Cursor.gd"
 Vars="*res://Scripts/Global/Vars.gd"
 CommonUtils="*res://Scripts/Global/CommonUtils.gd"
+Ticker="*res://Scripts/Global/Ticker.gd"
 
 [display]
 

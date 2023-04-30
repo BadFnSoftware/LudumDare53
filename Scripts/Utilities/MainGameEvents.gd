@@ -16,6 +16,8 @@ func _ready():
 	ScanningButtonDisabled = get_node("%ScanningButtonDisabled")
 	EnvelopeNamePanel = get_node("%EnvelopeNamePanel")
 	CustomerName = get_node("%CustomerName")
+	
+	Vars.TickerData.GameInProgress = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -72,6 +74,7 @@ func _on_sorting_bin_pressed():
 
 
 func _on_scanning_button_pressed():
+	Vars.TickerData.GameInProgress = false
 	get_tree().change_scene_to_file("res://Scenes/ScanningRoom.tscn")
 
 
