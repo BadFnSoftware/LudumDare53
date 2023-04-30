@@ -6,10 +6,8 @@
 script = ExtResource("1_7m8kt")
 FirstName = "dangerous"
 LastName = "package"
-Gender = 0
 RackSlotId = 4
 IsPackage = true
 IsDangerous = true
 IsScanned = false
-Contents = null
-CustomerModel = null
+Contents = "Spr_xrayscanbad_01.png"

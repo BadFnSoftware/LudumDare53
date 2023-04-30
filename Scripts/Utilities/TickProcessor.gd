@@ -33,6 +33,9 @@ func processTick():
 		Vars.TickerData.CurrentSecondsLeft -= 1
 	elif Vars.TickerData.CurrentSecondsLeft <= 0:
 		Vars.TickerData.CurrentSecondsLeft = 59
+	
+	if Vars.TickerData.CurrentMinutesLeft == Vars.PLAY_CLOCK:
+		Vars.TickerData.CurrentMinutesLeft -= 1
 
 	processJobs("tick")
 	

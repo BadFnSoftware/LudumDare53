@@ -2,8 +2,7 @@ extends Node
 
 var Envelope: Node
 var Package: Node
-var ScanningButton: Node
-var ScanningButtonDisabled: Node
+var ReportPackageButton: Node
 var EnvelopeNamePanel: Node
 var CustomerName: Node
 
@@ -12,21 +11,25 @@ var CustomerName: Node
 func _ready():
 	Envelope = get_node("%Envelope")
 	Package = get_node("%Package")
-	ScanningButton = get_node("%ScanningButton")
-	ScanningButtonDisabled = get_node("%ScanningButtonDisabled")
+	ReportPackageButton = get_node("%ReportPackageButton")
 	EnvelopeNamePanel = get_node("%EnvelopeNamePanel")
 	CustomerName = get_node("%CustomerName")
 
+	Vars.ScanningButton = get_node("%ScanningButton")
 	Vars.EndPanel = get_node("%EndPanel")
 	Vars.NumEnvelopesSortedNode = get_node("%NumEnvelopesSorted")
 	Vars.NumPackagesSortedNode = get_node("%NumPackagesSorted")
 	Vars.NumSortingMistakesNode = get_node("%NumSortingMistakes")
 	Vars.NumDangerousPackagesSortedNode = get_node("%NumDangerousPackagesSorted")
 	Vars.NumDangerousPackageSortingMistakesNode = get_node("%NumDangerousPackageSortingMistakes")
+	Vars.NumNotSortedNode = get_node("%NumNotSorted")
+	Vars.NumPackagesReportedNode = get_node("%NumPackagesReported")
+	Vars.NumPackagesReportedMistakesNode = get_node("%NumPackagesReportedMistakes")
 	
 	Vars.ClockMinutesNode = get_node("%ClockMinutes")
 	Vars.ClockSecondsNode = get_node("%ClockSeconds")
 
+	Vars.TickerData.CurrentMinutesLeft = Vars.PLAY_CLOCK
 	Vars.TickerData.GameInProgress = true
 	
 	CommonUtils.updateDisplayClock()
@@ -37,9 +40,9 @@ func _ready():
 		CustomerName.set_text(PlayerNameText)
 
 		if Vars.Player.CurrentEnvelope.IsPackage == true:
-			ScanningButton.visible = true
-			ScanningButtonDisabled.visible = false
+			Vars.ScanningButton.visible = false
 			Package.visible = true
+			ReportPackageButton.visible = true
 		else:
 			Envelope.visible = true
 
@@ -53,29 +56,35 @@ func _on_button_rack_slot_pressed():
 	var RackSlotId = self.get_meta("RackSlotId")
 
 	if Vars.Player.CurrentEnvelope != null:
-		if RackSlotId != Vars.Player.CurrentEnvelope.RackSlotId:
-			Vars.Player.NumMistakes += 1
-
 		if Vars.Player.CurrentEnvelope.IsPackage == true:
 			if Vars.Player.CurrentEnvelope.IsDangerous == true:
 				Vars.Player.NumDangerousPackagesSorted += 1
 
-				if Vars.Player.CurrentEnvelope.IsScanned == false || RackSlotId != Vars.Player.CurrentEnvelope.RackSlotId:
+				if Vars.Player.CurrentEnvelope.IsScanned == false || Vars.Player.CurrentEnvelope.Reported == false || RackSlotId != Vars.Player.CurrentEnvelope.RackSlotId:
 					Vars.Player.NumDangerousPackageMistakes += 1
+					Vars.Player.CustomerComplaintList.append(Vars.Player.CurrentEnvelope)
+				else:
+					Vars.Player.HappyCustomerList.append(Vars.Player.CurrentEnvelope)
 			else:
 				Vars.Player.NumPackagesSorted += 1
 
 				if RackSlotId != Vars.Player.CurrentEnvelope.RackSlotId:
 					Vars.Player.NumMistakes += 1
+					Vars.Player.CustomerComplaintList.append(Vars.Player.CurrentEnvelope)
+				else:
+					Vars.Player.HappyCustomerList.append(Vars.Player.CurrentEnvelope)
 
-			ScanningButton.visible = false
-			ScanningButtonDisabled.visible = true
+			Vars.ScanningButton.visible = false
 			Package.visible = false
+			ReportPackageButton.visible = false
 		else:
 			Vars.Player.NumEnvelopesSorted += 1
 
 			if RackSlotId != Vars.Player.CurrentEnvelope.RackSlotId:
 				Vars.Player.NumMistakes += 1
+				Vars.Player.CustomerComplaintList.append(Vars.Player.CurrentEnvelope)
+			else:
+				Vars.Player.HappyCustomerList.append(Vars.Player.CurrentEnvelope)
 
 			Envelope.visible = false 
 
@@ -99,8 +108,7 @@ func _on_sorting_bin_pressed():
 		CustomerName.set_text(PlayerNameText)
 
 		if Vars.Player.CurrentEnvelope.IsPackage == true:
-			ScanningButton.visible = true
-			ScanningButtonDisabled.visible = false
+			Vars.ScanningButton.visible = true
 			Package.visible = true
 		else:
 			Envelope.visible = true
@@ -121,3 +129,18 @@ func _on_envelope_button_up():
 
 func _on_envelope_button_down():
 	EnvelopeNamePanel.visible = true
+
+
+func _on_report_package_button_pressed():
+	Vars.Player.NumPackagesReported += 1
+	Vars.Player.CurrentEnvelope.Reported = true
+
+	if Vars.Player.CurrentEnvelope.IsDangerous == false:
+		Vars.Player.NumPackagesReportedMistakes += 1
+
+	ReportPackageButton.visible = false
+
+
+func _on_end_shift_pressed():
+	if Vars.Player.NumDangerousPackageMistakes > 0 || Vars.Player.NumMistakes > 0 || Vars.Player.NumPackagesReportedMistakes > 0:
+		get_tree().change_scene_to_file("res://Scenes/CustomerService.tscn")

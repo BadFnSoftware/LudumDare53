@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmojwdgcp3vai"]
+[gd_scene load_steps=13 format=3 uid="uid://bmojwdgcp3vai"]
 
 [ext_resource type="Texture2D" uid="uid://c27ggghh06jor" path="res://Assets/Scenes/MainGame/Spr_SortingScreen_01.png" id="1_b2qmk"]
 [ext_resource type="Script" path="res://Scripts/Utilities/MainGameEvents.gd" id="1_y1lun"]
@@ -7,11 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://cx0kky5l2mx42" path="res://Assets/Objects/Spr_Mail_01.png" id="5_q1nwr"]
 [ext_resource type="Texture2D" uid="uid://dndqnd6fa2t0n" path="res://Assets/Objects/Spr_package_01.png" id="6_2mtx8"]
 [ext_resource type="FontFile" uid="uid://br16r50alhowl" path="res://Assets/Fonts/PressStart2P/PressStart2P.otf" id="6_qrfyu"]
-[ext_resource type="Texture2D" uid="uid://c0m5qkbv8hu6t" path="res://Assets/UI/MainGame/Buttons/Spr_xraybutton_01.png" id="7_msax4"]
+[ext_resource type="Texture2D" uid="uid://qgf03wdhtcmt" path="res://Assets/UI/MainGame/Buttons/Spr_ReportButton_01.png" id="8_60bu8"]
 [ext_resource type="Texture2D" uid="uid://cfp432ciweotg" path="res://Assets/Objects/Spr_Clock_01.png" id="8_odlrs"]
+[ext_resource type="Texture2D" uid="uid://dquo0oks84jwl" path="res://Assets/UI/MainGame/Buttons/Spr_xraybutton_normal_01.png" id="8_p0x4u"]
+[ext_resource type="Texture2D" uid="uid://d33t43ucypug8" path="res://Assets/UI/MainGame/Buttons/Spr_ReportButton_02.png" id="9_bjyt1"]
+[ext_resource type="Texture2D" uid="uid://nw0yc4iosvye" path="res://Assets/UI/MainGame/Buttons/Spr_xraybutton_pressed_01.png" id="9_dgwim"]
 
 [node name="Node2D" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [189.0, 202.0, 215.0, 229.0, 243.0]
+metadata/_edit_vertical_guides_ = [156.0, 474.0]
 
 [node name="Control" type="Control" parent="."]
 texture_filter = 1
@@ -197,27 +201,29 @@ offset_bottom = 254.0
 scale = Vector2(2, 2)
 texture_normal = ExtResource("6_2mtx8")
 
-[node name="ScanningButtonDisabled" type="TextureButton" parent="Control"]
+[node name="ReportPackageButton" type="TextureButton" parent="Control"]
 unique_name_in_owner = true
+visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 612.0
-offset_top = 128.0
-offset_right = 676.0
-offset_bottom = 168.0
-disabled = true
-texture_normal = ExtResource("7_msax4")
+offset_left = 487.0
+offset_top = 266.0
+offset_right = 535.0
+offset_bottom = 299.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("8_60bu8")
+texture_pressed = ExtResource("9_bjyt1")
 
 [node name="ScanningButton" type="TextureButton" parent="Control"]
 unique_name_in_owner = true
 visible = false
 texture_filter = 1
-layout_mode = 0
-offset_left = 577.0
-offset_top = 128.0
-offset_right = 641.0
-offset_bottom = 168.0
-texture_normal = ExtResource("7_msax4")
+offset_left = 542.0
+offset_top = 262.0
+offset_right = 574.0
+offset_bottom = 295.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("8_p0x4u")
+texture_pressed = ExtResource("9_dgwim")
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
 texture_filter = 1
@@ -325,9 +331,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 26.0
-offset_top = 64.0
+offset_top = 54.0
 offset_right = -32.0
-offset_bottom = -176.0
+offset_bottom = -186.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
@@ -341,9 +347,9 @@ autowrap_mode = 2
 [node name="EnvelopesSorted" type="RichTextLabel" parent="Control/EndPanel"]
 layout_mode = 0
 offset_left = 74.0
-offset_top = 146.0
+offset_top = 126.0
 offset_right = 201.0
-offset_bottom = 157.0
+offset_bottom = 137.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
 text = "Envelopes Sorted:"
@@ -355,9 +361,9 @@ autowrap_mode = 0
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 392.0
-offset_top = 146.0
+offset_top = 126.0
 offset_right = 525.0
-offset_bottom = 157.0
+offset_bottom = 137.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
 text = "0"
@@ -368,9 +374,9 @@ autowrap_mode = 0
 [node name="PackagesSorted" type="RichTextLabel" parent="Control/EndPanel"]
 layout_mode = 0
 offset_left = 74.0
-offset_top = 159.0
+offset_top = 139.0
 offset_right = 186.0
-offset_bottom = 169.0
+offset_bottom = 149.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
 text = "Packages Sorted:"
@@ -382,9 +388,9 @@ autowrap_mode = 0
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 392.0
-offset_top = 159.0
+offset_top = 139.0
 offset_right = 525.0
-offset_bottom = 169.0
+offset_bottom = 149.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
 text = "0"
@@ -395,9 +401,9 @@ autowrap_mode = 0
 [node name="SortingMistakes" type="RichTextLabel" parent="Control/EndPanel"]
 layout_mode = 0
 offset_left = 74.0
-offset_top = 172.0
+offset_top = 152.0
 offset_right = 193.0
-offset_bottom = 181.0
+offset_bottom = 161.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
 text = "Sorting Mistakes:"
@@ -409,9 +415,9 @@ autowrap_mode = 0
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 392.0
-offset_top = 172.0
+offset_top = 152.0
 offset_right = 526.0
-offset_bottom = 181.0
+offset_bottom = 161.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
 text = "0"
@@ -422,9 +428,9 @@ autowrap_mode = 0
 [node name="DangerousPackagesSorted" type="RichTextLabel" parent="Control/EndPanel"]
 layout_mode = 0
 offset_left = 74.0
-offset_top = 186.0
+offset_top = 166.0
 offset_right = 256.0
-offset_bottom = 196.0
+offset_bottom = 176.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
 text = "Dangerous Packages Sorted:"
@@ -436,9 +442,9 @@ autowrap_mode = 0
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 392.0
-offset_top = 186.0
+offset_top = 166.0
 offset_right = 522.0
-offset_bottom = 196.0
+offset_bottom = 176.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
 text = "0"
@@ -449,9 +455,9 @@ autowrap_mode = 0
 [node name="DangerousPackageSortingMistakes" type="RichTextLabel" parent="Control/EndPanel"]
 layout_mode = 0
 offset_left = 74.0
-offset_top = 200.0
+offset_top = 180.0
 offset_right = 319.0
-offset_bottom = 210.0
+offset_bottom = 190.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
 text = "Dangerous Package Sorting Mistakes:"
@@ -463,9 +469,9 @@ autowrap_mode = 0
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 392.0
-offset_top = 200.0
+offset_top = 180.0
 offset_right = 523.0
-offset_bottom = 210.0
+offset_bottom = 190.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 7
 text = "0"
@@ -473,12 +479,87 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Button" type="Button" parent="Control/EndPanel"]
+[node name="NotSorted" type="RichTextLabel" parent="Control/EndPanel"]
+offset_left = 74.0
+offset_top = 193.0
+offset_right = 319.0
+offset_bottom = 203.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 7
+text = "Not Sorted:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumNotSorted" type="RichTextLabel" parent="Control/EndPanel"]
+unique_name_in_owner = true
+offset_left = 392.0
+offset_top = 193.0
+offset_right = 523.0
+offset_bottom = 203.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="PackagesReported" type="RichTextLabel" parent="Control/EndPanel"]
+offset_left = 74.0
+offset_top = 207.0
+offset_right = 319.0
+offset_bottom = 217.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 7
+text = "Packages Reported:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumPackagesReported" type="RichTextLabel" parent="Control/EndPanel"]
+unique_name_in_owner = true
+offset_left = 392.0
+offset_top = 207.0
+offset_right = 523.0
+offset_bottom = 217.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="PackagesReportedMistakes" type="RichTextLabel" parent="Control/EndPanel"]
+offset_left = 74.0
+offset_top = 222.0
+offset_right = 319.0
+offset_bottom = 232.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 7
+text = "Packages Reported Mistakes:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumPackagesReportedMistakes" type="RichTextLabel" parent="Control/EndPanel"]
+unique_name_in_owner = true
+offset_left = 392.0
+offset_top = 222.0
+offset_right = 523.0
+offset_bottom = 232.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="EndShift" type="Button" parent="Control/EndPanel"]
 layout_mode = 0
 offset_left = 134.0
-offset_top = 240.0
+offset_top = 248.0
 offset_right = 366.0
-offset_bottom = 271.0
+offset_bottom = 279.0
 theme_override_fonts/font = ExtResource("6_qrfyu")
 text = "End your shift"
 
@@ -500,4 +581,6 @@ text = "End your shift"
 [connection signal="button_down" from="Control/Package" to="Control" method="_on_envelope_button_down"]
 [connection signal="button_up" from="Control/Package" to="Control" method="_on_envelope_button_up"]
 [connection signal="pressed" from="Control/Package" to="Control" method="_on_envelope_pressed"]
+[connection signal="pressed" from="Control/ReportPackageButton" to="Control" method="_on_report_package_button_pressed"]
 [connection signal="pressed" from="Control/ScanningButton" to="Control" method="_on_scanning_button_pressed"]
+[connection signal="pressed" from="Control/EndPanel/EndShift" to="Control" method="_on_end_shift_pressed"]

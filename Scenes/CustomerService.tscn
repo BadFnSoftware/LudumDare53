@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg3bbgnrivco0"]
+
+[ext_resource type="Texture2D" uid="uid://d0l8ke3hsnvve" path="res://Assets/Scenes/CustomerService/Spr_customerserviceBG_01.png" id="1_yi7jp"]
+[ext_resource type="Texture2D" uid="uid://c6wygc7bx5ett" path="res://Assets/Scenes/CustomerService/Spr_customerserviceDesk_01.png" id="2_i4ptf"]
+
+[node name="CustomerService" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4, 4)
+texture = ExtResource("1_yi7jp")
+stretch_mode = 2
+
+[node name="Customer" type="TextureRect" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 2
+
+[node name="Desk" type="TextureRect" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4, 4)
+texture = ExtResource("2_i4ptf")
+stretch_mode = 2

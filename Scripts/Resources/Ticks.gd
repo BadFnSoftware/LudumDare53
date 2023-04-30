@@ -3,7 +3,7 @@ extends Resource
 
 @export var Tick: float
 @export var GameInProgress := false
-@export var CurrentMinutesLeft := 10
+@export var CurrentMinutesLeft: int
 @export var CurrentSecondsLeft := 0
 @export var TickTimer := 0
 @export var MinuteTickTimer := 0

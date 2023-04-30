@@ -77,16 +77,17 @@ func gatherAllCustomerModels():
 		return availCustomers
 
 
-func getGenderFromCustomerEnvelope():
-	return Vars.GenderTypes.keys()[Vars.Player.CurrentEnvelope.Gender]
-
-
 func setEndPanelDisplay():
 	Vars.NumEnvelopesSortedNode.set_text(str(Vars.Player.NumEnvelopesSorted))
 	Vars.NumPackagesSortedNode.set_text(str(Vars.Player.NumPackagesSorted))
 	Vars.NumSortingMistakesNode.set_text(str(Vars.Player.NumMistakes))
 	Vars.NumDangerousPackagesSortedNode.set_text(str(Vars.Player.NumDangerousPackagesSorted))
 	Vars.NumDangerousPackageSortingMistakesNode.set_text(str(Vars.Player.NumDangerousPackageMistakes))
+	Vars.NumPackagesReportedNode.set_text(str(Vars.Player.NumPackagesReported))
+	Vars.NumPackagesReportedMistakesNode.set_text(str(Vars.Player.NumPackagesReportedMistakes))
+	
+	if Vars.Player.NumEnvelopesAvail > 0:
+		Vars.NumNotSortedNode.set_text(str(Vars.Player.NumEnvelopesAvail))
 
 
 func updateDisplayClock():
