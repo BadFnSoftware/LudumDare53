@@ -23,8 +23,10 @@ stretch_mode = 2
 [node name="Customer" type="TextureRect" parent="Control"]
 texture_filter = 1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 369.0
+offset_top = 194.0
+offset_right = 409.0
+offset_bottom = 234.0
 stretch_mode = 2
 
 [node name="Desk" type="TextureRect" parent="Control"]

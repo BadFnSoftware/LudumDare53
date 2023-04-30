@@ -32,10 +32,11 @@ stretch_mode = 2
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 0
-offset_left = 274.0
-offset_top = 237.0
-offset_right = 314.0
-offset_bottom = 277.0
+offset_left = 214.0
+offset_top = 163.0
+offset_right = 264.0
+offset_bottom = 192.0
+scale = Vector2(4, 4)
 stretch_mode = 2
 
 [node name="ScannerOffOverlay" type="ColorRect" parent="Control"]
