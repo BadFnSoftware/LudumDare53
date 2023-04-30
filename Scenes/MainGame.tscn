@@ -205,6 +205,7 @@ texture_normal = ExtResource("6_2mtx8")
 unique_name_in_owner = true
 visible = false
 texture_filter = 1
+layout_mode = 0
 offset_left = 487.0
 offset_top = 266.0
 offset_right = 535.0
@@ -217,6 +218,7 @@ texture_pressed = ExtResource("9_bjyt1")
 unique_name_in_owner = true
 visible = false
 texture_filter = 1
+layout_mode = 0
 offset_left = 542.0
 offset_top = 262.0
 offset_right = 574.0
@@ -336,6 +338,7 @@ offset_right = -32.0
 offset_bottom = -186.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/line_separation = 4
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
@@ -480,6 +483,7 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="NotSorted" type="RichTextLabel" parent="Control/EndPanel"]
+layout_mode = 0
 offset_left = 74.0
 offset_top = 193.0
 offset_right = 319.0
@@ -493,6 +497,7 @@ autowrap_mode = 0
 
 [node name="NumNotSorted" type="RichTextLabel" parent="Control/EndPanel"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 392.0
 offset_top = 193.0
 offset_right = 523.0
@@ -505,6 +510,7 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="PackagesReported" type="RichTextLabel" parent="Control/EndPanel"]
+layout_mode = 0
 offset_left = 74.0
 offset_top = 207.0
 offset_right = 319.0
@@ -518,6 +524,7 @@ autowrap_mode = 0
 
 [node name="NumPackagesReported" type="RichTextLabel" parent="Control/EndPanel"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 392.0
 offset_top = 207.0
 offset_right = 523.0
@@ -530,6 +537,7 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="PackagesReportedMistakes" type="RichTextLabel" parent="Control/EndPanel"]
+layout_mode = 0
 offset_left = 74.0
 offset_top = 222.0
 offset_right = 319.0
@@ -543,6 +551,7 @@ autowrap_mode = 0
 
 [node name="NumPackagesReportedMistakes" type="RichTextLabel" parent="Control/EndPanel"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 392.0
 offset_top = 222.0
 offset_right = 523.0

@@ -11,12 +11,21 @@ func getDirectoryContents(path):
 		var file_name = dir.get_next()
 
 		while file_name != "":
-			contents.append(load(path + "/" + file_name))
-			file_name = dir.get_next()
+			if ".import" in file_name:
+				file_name = dir.get_next()
+			else:
+				contents.append(load(path + "/" + file_name))
+				file_name = dir.get_next()
 	else:
 		print("An error occurred when trying to access the path: " + path + ".")
 
 	return contents
+
+
+func getNewRandomCustomer():
+	Vars.Player.CurrentCustomerModel = self.generateRandomCustomerModel()
+	Vars.Player.CurrentCustomerDialogTree = self.generateRandomCustomerDialogTree()
+	Vars.Player.CurrentEnvelope = self.generateRandomComplaintEnvelope()
 
 
 func generateRandomEnvelope():
@@ -37,20 +46,46 @@ func generateRandomEnvelope():
 		return randomEnvelope
 
 
-func generateRandomCustomer():
-	if Vars.AvailCustomers.is_empty():
+func generateRandomComplaintEnvelope():
+	if Vars.Player.CustomerComplaintList.is_empty():
+		print("No envelopes/packages are left!")
+		return null
+	else:
+		var maxRng = Vars.Player.CustomerComplaintList.size() - 1
+		var rng = RandomNumberGenerator.new()
+		var index = rng.randi_range(0, maxRng)
+		var randomEnvelope = Vars.Player.CustomerComplaintList[index]
+
+		if maxRng > 0:
+			Vars.Player.CustomerComplaintList.remove_at (index)
+		else:
+			Vars.Player.CustomerComplaintList = []
+
+		return randomEnvelope
+
+
+func generateRandomCustomerModel():
+	if Vars.Player.AvailCustomerModels.is_empty():
 		print("No customer models are avail!")
 		return null
 	else:
-		var maxRng = Vars.AvailCustomers.size() - 1
+		var maxRng = Vars.Player.AvailCustomerModels.size() - 1
 		var rng = RandomNumberGenerator.new()
 		var index = rng.randi_range(0, maxRng)
-		var randomCustomer = Vars.AvailCustomers[index]
+		var randomCustomer = Vars.Player.AvailCustomerModels[index]
 
-		if maxRng == 0:
-			Vars.Player.AvailCustomers = []
-		else:
-			Vars.Player.AvailCustomers.remove_at (index)
+		return randomCustomer
+
+
+func generateRandomCustomerDialogTree():
+	if Vars.Player.AvailCustomerDialogTrees.is_empty():
+		print("No customer models are avail!")
+		return null
+	else:
+		var maxRng = Vars.Player.AvailCustomerDialogTrees.size() - 1
+		var rng = RandomNumberGenerator.new()
+		var index = rng.randi_range(0, maxRng)
+		var randomCustomer = Vars.Player.AvailCustomerDialogTrees[index]
 
 		return randomCustomer
 
@@ -67,14 +102,25 @@ func gatherAllEnvelopes():
 
 
 func gatherAllCustomerModels():
-	var path = "res://Assets/Customers/"
-	var availCustomers = self.getDirectoryContents(path)
+	var path = "res://Assets/CustomerModels/"
+	var AvailCustomerModels = self.getDirectoryContents(path)
 
-	if availCustomers.is_empty():
+	if AvailCustomerModels.is_empty():
 		print("Error gathering available customers, came up empty...")
 		return []
 	else:
-		return availCustomers
+		return AvailCustomerModels
+
+
+func gatherAllCustomerDialogTrees():
+	var path = "res://Resources/CustomerDialogTrees/"
+	var AvailCustomerDialogTrees = self.getDirectoryContents(path)
+
+	if AvailCustomerDialogTrees.is_empty():
+		print("Error gathering available customer dialog trees, came up empty...")
+		return []
+	else:
+		return AvailCustomerDialogTrees
 
 
 func setEndPanelDisplay():
@@ -88,6 +134,10 @@ func setEndPanelDisplay():
 	
 	if Vars.Player.NumEnvelopesAvail > 0:
 		Vars.NumNotSortedNode.set_text(str(Vars.Player.NumEnvelopesAvail))
+
+
+func setCustomerModel():
+	Vars.CustomerModelNode.texture = Vars.Player.CurrentCustomerModel
 
 
 func updateDisplayClock():
@@ -109,3 +159,16 @@ func updateDisplayClock():
 
 	Vars.ClockMinutesNode.set_text(str(minuteText))
 	Vars.ClockSecondsNode.set_text(str(secondText))
+
+
+func buildPlayerResponses(type):
+	if type == "greeting":
+		Vars.BestResponseTextNode.text = "[center]" + str(Vars.Player.CurrentCustomerDialogTree.GreetingBestResponse) + "[/center]"
+		Vars.GoodResponseTextNode.text = "[center]" + str(Vars.Player.CurrentCustomerDialogTree.GreetingGoodResponse) + "[/center]"
+		Vars.BadResponseTextNode.text = "[center]" + str(Vars.Player.CurrentCustomerDialogTree.GreetingBadResponse) + "[/center]"
+		Vars.WorstResponseTextNode.text = "[center]" + str(Vars.Player.CurrentCustomerDialogTree.GreetingWorstResponse) + "[/center]"
+	elif type == "demand":
+		Vars.BestResponseTextNode.text = "[center]" + str(Vars.Player.CurrentCustomerDialogTree.DemandBestResponse) + "[/center]"
+		Vars.GoodResponseTextNode.text = "[center]" + str(Vars.Player.CurrentCustomerDialogTree.DemandGoodResponse) + "[/center]"
+		Vars.BadResponseTextNode.text = "[center]" + str(Vars.Player.CurrentCustomerDialogTree.DemandBadResponse) + "[/center]"
+		Vars.WorstResponseTextNode.text = "[center]" + str(Vars.Player.CurrentCustomerDialogTree.DemandWorstResponse) + "[/center]"

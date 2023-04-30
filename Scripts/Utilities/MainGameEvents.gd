@@ -1,3 +1,4 @@
+class_name MainGameEvents
 extends Node
 
 var Envelope: Node
@@ -48,7 +49,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -139,6 +140,8 @@ func _on_report_package_button_pressed():
 		Vars.Player.NumPackagesReportedMistakes += 1
 
 	ReportPackageButton.visible = false
+	Package.visible = false
+	Vars.Player.CurrentEnvelope = null
 
 
 func _on_end_shift_pressed():

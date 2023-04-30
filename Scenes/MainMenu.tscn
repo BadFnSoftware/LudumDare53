@@ -38,6 +38,7 @@ scale = Vector2(2, 2)
 texture_normal = ExtResource("2_ah6iq")
 
 [node name="SettingsButton" type="TextureButton" parent="Control"]
+visible = false
 texture_filter = 1
 layout_mode = 0
 offset_left = 39.0

@@ -1,3 +1,4 @@
+class_name MainMenuEvents
 extends Node
 
 
@@ -5,7 +6,7 @@ extends Node
 func _ready():
 	Vars.Player = preload("res://Scripts/Resources/Player.gd").new()
 	Vars.TickerData = preload("res://Scripts/Resources/Ticks.gd").new()
-	
+
 	Vars.TickerData.Tick = Vars.TICK_RATE
 
 	Vars.UpdateJobFuncs = preload("res://Scripts/TickJobs/UpdateJobFuncs.gd").new()
@@ -19,7 +20,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -29,7 +30,8 @@ func _on_start_button_pressed():
 	if !Vars.Player.AvailEnvelopes.is_empty():
 		Vars.Player.NumEnvelopesAvail = Vars.Player.AvailEnvelopes.size()
 		Vars.Player.NumTotalEnvelopes = Vars.Player.NumEnvelopesAvail
-		Vars.Player.AvailCustomers = CommonUtils.gatherAllCustomerModels()
+		Vars.Player.AvailCustomerModels = CommonUtils.gatherAllCustomerModels()
+		Vars.Player.AvailCustomerDialogTrees = CommonUtils.gatherAllCustomerDialogTrees()
 
 	get_tree().change_scene_to_file("res://Scenes/MainGame.tscn")
 

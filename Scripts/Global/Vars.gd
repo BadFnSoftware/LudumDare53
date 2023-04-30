@@ -4,7 +4,7 @@ const DEBUG := false
 const VERBOSE := false
 
 const TICK_RATE := 1 # In seconds
-const PLAY_CLOCK := 10 # In seconds
+const PLAY_CLOCK := 5 # In seconds
 const TICKS_PER_MINUTE := 60
 const SECONDS_WIN_CONDITION := 600
 const MINUTES_PER_HOUR := 60
@@ -15,10 +15,10 @@ const WEEKS_PER_YEAR := 52
 const MONTHS_PER_YEAR := 12
 const DAYS_PER_YEAR := 365
 
-var Player: PlayerClass
+var Player: Player
 var TickerData: Ticks
 
-var XrayWaitTime := 3.0 # In seconds
+var XrayWaitTime := 1.25 # In seconds
 var XrayWaitTimeRemaining := XrayWaitTime
 
 var NumEnvelopesSortedNode: Node
@@ -34,6 +34,12 @@ var EndPanel: Node
 var ScanningButton: Node
 var ClockMinutesNode: Node
 var ClockSecondsNode: Node
+var CustomerModelNode: Node
+
+var BestResponseTextNode: Node
+var GoodResponseTextNode: Node
+var BadResponseTextNode: Node
+var WorstResponseTextNode: Node
 
 var UpdateJobFuncs: UpdateJobFuncsClass
 var TickJobFuncs: TickJobFuncsClass
