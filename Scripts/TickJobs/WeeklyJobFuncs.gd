@@ -1,4 +1,4 @@
-class_name WeeklyJobClass
+class_name WeeklyJobFuncsClass
 extends Node
 
 

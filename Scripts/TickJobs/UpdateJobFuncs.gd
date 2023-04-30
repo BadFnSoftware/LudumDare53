@@ -1,4 +1,4 @@
-class_name UpdateJobClass
+class_name UpdateJobFuncsClass
 extends Node
 
 

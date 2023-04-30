@@ -1,4 +1,4 @@
-class_name HourlyJobClass
+class_name HourlyJobFuncsClass
 extends Node
 
 

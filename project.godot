@@ -13,6 +13,7 @@ config_version=5
 config/name="Mail Mayhem"
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
+run/max_fps=30
 config/icon="res://icon.svg"
 run/size/viewport_height=648
 run/size/viewport_width=72
@@ -23,6 +24,7 @@ Cursor="*res://Scripts/Global/Cursor.gd"
 Vars="*res://Scripts/Global/Vars.gd"
 CommonUtils="*res://Scripts/Global/CommonUtils.gd"
 Ticker="*res://Scripts/Global/Ticker.gd"
+TickProcessor="*res://Scripts/Utilities/TickProcessor.gd"
 
 [display]
 

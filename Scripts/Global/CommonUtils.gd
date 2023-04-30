@@ -28,7 +28,7 @@ func generateRandomEnvelope():
 		var rng = RandomNumberGenerator.new()
 		var index = rng.randi_range(0, maxRng)
 		var randomEnvelope = Vars.Player.AvailEnvelopes[index]
-		
+
 		if maxRng > 0:
 			Vars.Player.AvailEnvelopes.remove_at (index)
 		else:
@@ -46,7 +46,7 @@ func generateRandomCustomer():
 		var rng = RandomNumberGenerator.new()
 		var index = rng.randi_range(0, maxRng)
 		var randomCustomer = Vars.AvailCustomers[index]
-		
+
 		if maxRng == 0:
 			Vars.Player.AvailCustomers = []
 		else:
@@ -79,3 +79,32 @@ func gatherAllCustomerModels():
 
 func getGenderFromCustomerEnvelope():
 	return Vars.GenderTypes.keys()[Vars.Player.CurrentEnvelope.Gender]
+
+
+func setEndPanelDisplay():
+	Vars.NumEnvelopesSortedNode.set_text(str(Vars.Player.NumEnvelopesSorted))
+	Vars.NumPackagesSortedNode.set_text(str(Vars.Player.NumPackagesSorted))
+	Vars.NumSortingMistakesNode.set_text(str(Vars.Player.NumMistakes))
+	Vars.NumDangerousPackagesSortedNode.set_text(str(Vars.Player.NumDangerousPackagesSorted))
+	Vars.NumDangerousPackageSortingMistakesNode.set_text(str(Vars.Player.NumDangerousPackageMistakes))
+
+
+func updateDisplayClock():
+	var minutesLeft: String
+	var secondsLeft: String
+
+	if Vars.TickerData.CurrentMinutesLeft < 10:
+		minutesLeft = "0" + str(Vars.TickerData.CurrentMinutesLeft)
+	else:
+		minutesLeft = str(Vars.TickerData.CurrentMinutesLeft)
+
+	if Vars.TickerData.CurrentSecondsLeft < 10:
+		secondsLeft = "0" + str(Vars.TickerData.CurrentSecondsLeft)
+	else:
+		secondsLeft = str(Vars.TickerData.CurrentSecondsLeft)
+
+	var minuteText = "[center]" + str(minutesLeft) + "[/center]"
+	var secondText = "[center]" + str(secondsLeft) + "[/center]"
+
+	Vars.ClockMinutesNode.set_text(str(minuteText))
+	Vars.ClockSecondsNode.set_text(str(secondText))

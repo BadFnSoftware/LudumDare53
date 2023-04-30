@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmojwdgcp3vai"]
+[gd_scene load_steps=10 format=3 uid="uid://bmojwdgcp3vai"]
 
 [ext_resource type="Texture2D" uid="uid://c27ggghh06jor" path="res://Assets/Scenes/MainGame/Spr_SortingScreen_01.png" id="1_b2qmk"]
 [ext_resource type="Script" path="res://Scripts/Utilities/MainGameEvents.gd" id="1_y1lun"]
@@ -8,8 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://dndqnd6fa2t0n" path="res://Assets/Objects/Spr_package_01.png" id="6_2mtx8"]
 [ext_resource type="FontFile" uid="uid://br16r50alhowl" path="res://Assets/Fonts/PressStart2P/PressStart2P.otf" id="6_qrfyu"]
 [ext_resource type="Texture2D" uid="uid://c0m5qkbv8hu6t" path="res://Assets/UI/MainGame/Buttons/Spr_xraybutton_01.png" id="7_msax4"]
+[ext_resource type="Texture2D" uid="uid://cfp432ciweotg" path="res://Assets/Objects/Spr_Clock_01.png" id="8_odlrs"]
 
 [node name="Node2D" type="Node2D"]
+metadata/_edit_vertical_guides_ = [126.0, 444.0]
+metadata/_edit_horizontal_guides_ = [189.0, 202.0, 215.0, 229.0, 243.0]
 
 [node name="Control" type="Control" parent="."]
 texture_filter = 1
@@ -52,91 +55,113 @@ scale = Vector2(4, 4)
 texture_normal = ExtResource("4_w3pke")
 
 [node name="ButtonXZ" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 480.0
 offset_top = 173.0
 offset_right = 617.0
 offset_bottom = 242.0
 flat = true
+script = ExtResource("1_y1lun")
 metadata/RackSlotId = 12
 
 [node name="ButtonUW" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 325.0
 offset_top = 172.0
 offset_right = 464.0
 offset_bottom = 241.0
 flat = true
+script = ExtResource("1_y1lun")
 metadata/RackSlotId = 11
 
 [node name="ButtonST" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 176.0
 offset_top = 173.0
 offset_right = 316.0
 offset_bottom = 242.0
 flat = true
+script = ExtResource("1_y1lun")
 metadata/RackSlotId = 10
 
 [node name="ButtonQR" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 173.0
 offset_right = 161.0
 offset_bottom = 242.0
 flat = true
+script = ExtResource("1_y1lun")
 metadata/RackSlotId = 9
 
 [node name="ButtonOP" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 479.0
 offset_top = 92.0
 offset_right = 616.0
 offset_bottom = 161.0
 flat = true
+script = ExtResource("1_y1lun")
 metadata/RackSlotId = 8
 
 [node name="ButtonMN" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 325.0
 offset_top = 91.0
 offset_right = 464.0
 offset_bottom = 160.0
 flat = true
+script = ExtResource("1_y1lun")
 metadata/RackSlotId = 7
 
 [node name="ButtonKL" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 176.0
 offset_top = 91.0
 offset_right = 316.0
 offset_bottom = 160.0
 flat = true
+script = ExtResource("1_y1lun")
 metadata/RackSlotId = 6
 
 [node name="ButtonIJ" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 23.0
 offset_top = 92.0
 offset_right = 160.0
 offset_bottom = 161.0
 flat = true
+script = ExtResource("1_y1lun")
 metadata/RackSlotId = 5
 
 [node name="ButtonGH" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 479.0
 offset_top = 15.0
 offset_right = 616.0
 offset_bottom = 84.0
 flat = true
+script = ExtResource("1_y1lun")
 metadata/RackSlotId = 4
 
 [node name="ButtonEF" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 324.0
 offset_top = 15.0
 offset_right = 464.0
 offset_bottom = 84.0
 flat = true
+script = ExtResource("1_y1lun")
 metadata/RackSlotId = 3
 
 [node name="ButtonCD" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 176.0
 offset_top = 16.0
 offset_right = 315.0
 offset_bottom = 85.0
 flat = true
+script = ExtResource("1_y1lun")
 metadata/RackSlotId = 2
 
 [node name="ButtonAB" type="Button" parent="Control"]
@@ -146,6 +171,7 @@ offset_top = 16.0
 offset_right = 161.0
 offset_bottom = 85.0
 flat = true
+script = ExtResource("1_y1lun")
 metadata/RackSlotId = 1
 
 [node name="Envelope" type="TextureButton" parent="Control"]
@@ -194,6 +220,48 @@ offset_right = 641.0
 offset_bottom = 168.0
 texture_normal = ExtResource("7_msax4")
 
+[node name="TextureRect" type="TextureRect" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 169.0
+offset_top = 207.0
+offset_right = 217.0
+offset_bottom = 247.0
+scale = Vector2(3, 3)
+texture = ExtResource("8_odlrs")
+stretch_mode = 2
+
+[node name="ClockMinutes" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 203.0
+offset_top = 257.0
+offset_right = 243.0
+offset_bottom = 278.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center]00[/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ClockSeconds" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 0
+offset_left = 244.0
+offset_top = 257.0
+offset_right = 284.0
+offset_bottom = 281.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center]00[/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
 [node name="EnvelopeNamePanel" type="Panel" parent="Control"]
 unique_name_in_owner = true
 visible = false
@@ -226,19 +294,208 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
+[node name="EndPanel" type="Panel" parent="Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 82.0
+offset_top = 37.0
+offset_right = 582.0
+offset_bottom = 337.0
+
+[node name="Heading" type="RichTextLabel" parent="Control/EndPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.5
+offset_top = 17.0
+offset_right = 67.5
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 22
+text = "Your shift is over!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Description" type="RichTextLabel" parent="Control/EndPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_top = 64.0
+offset_right = -32.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[center]If you have any upset customers, you will have to deal with them at the customer service desk, otherwise you're free to go home![/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="EnvelopesSorted" type="RichTextLabel" parent="Control/EndPanel"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 146.0
+offset_right = 171.0
+offset_bottom = 157.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 7
+text = "Envelopes Sorted:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumEnvelopesSorted" type="RichTextLabel" parent="Control/EndPanel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 362.0
+offset_top = 146.0
+offset_right = 495.0
+offset_bottom = 157.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="PackagesSorted" type="RichTextLabel" parent="Control/EndPanel"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 159.0
+offset_right = 156.0
+offset_bottom = 169.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 7
+text = "Packages Sorted:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumPackagesSorted" type="RichTextLabel" parent="Control/EndPanel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 362.0
+offset_top = 159.0
+offset_right = 495.0
+offset_bottom = 169.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SortingMistakes" type="RichTextLabel" parent="Control/EndPanel"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 172.0
+offset_right = 163.0
+offset_bottom = 181.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 7
+text = "Sorting Mistakes:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumSortingMistakes" type="RichTextLabel" parent="Control/EndPanel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 362.0
+offset_top = 172.0
+offset_right = 496.0
+offset_bottom = 181.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="DangerousPackagesSorted" type="RichTextLabel" parent="Control/EndPanel"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 186.0
+offset_right = 226.0
+offset_bottom = 196.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 7
+text = "Dangerous Packages Sorted:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumDangerousPackagesSorted" type="RichTextLabel" parent="Control/EndPanel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 362.0
+offset_top = 186.0
+offset_right = 492.0
+offset_bottom = 196.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="DangerousPackageSortingMistakes" type="RichTextLabel" parent="Control/EndPanel"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 200.0
+offset_right = 289.0
+offset_bottom = 210.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 7
+text = "Dangerous Package Sorting Mistakes:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumDangerousPackageSortingMistakes" type="RichTextLabel" parent="Control/EndPanel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 362.0
+offset_top = 200.0
+offset_right = 493.0
+offset_bottom = 210.0
+theme_override_fonts/normal_font = ExtResource("6_qrfyu")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="Button" parent="Control/EndPanel"]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 240.0
+offset_right = 366.0
+offset_bottom = 271.0
+theme_override_fonts/font = ExtResource("6_qrfyu")
+text = "End your shift"
+
 [connection signal="pressed" from="Control/SortingBin" to="Control" method="_on_sorting_bin_pressed"]
-[connection signal="pressed" from="Control/ButtonXZ" to="Control" method="_on_button_rack_slot_pressed"]
-[connection signal="pressed" from="Control/ButtonUW" to="Control" method="_on_button_rack_slot_pressed"]
-[connection signal="pressed" from="Control/ButtonST" to="Control" method="_on_button_rack_slot_pressed"]
-[connection signal="pressed" from="Control/ButtonQR" to="Control" method="_on_button_rack_slot_pressed"]
-[connection signal="pressed" from="Control/ButtonOP" to="Control" method="_on_button_rack_slot_pressed"]
-[connection signal="pressed" from="Control/ButtonMN" to="Control" method="_on_button_rack_slot_pressed"]
-[connection signal="pressed" from="Control/ButtonKL" to="Control" method="_on_button_rack_slot_pressed"]
-[connection signal="pressed" from="Control/ButtonIJ" to="Control" method="_on_button_rack_slot_pressed"]
-[connection signal="pressed" from="Control/ButtonGH" to="Control" method="_on_button_rack_slot_pressed"]
-[connection signal="pressed" from="Control/ButtonEF" to="Control" method="_on_button_rack_slot_pressed"]
-[connection signal="pressed" from="Control/ButtonCD" to="Control" method="_on_button_rack_slot_pressed"]
-[connection signal="pressed" from="Control/ButtonAB" to="Control" method="_on_button_rack_slot_pressed"]
+[connection signal="pressed" from="Control/ButtonXZ" to="Control/ButtonXZ" method="_on_button_rack_slot_pressed"]
+[connection signal="pressed" from="Control/ButtonUW" to="Control/ButtonUW" method="_on_button_rack_slot_pressed"]
+[connection signal="pressed" from="Control/ButtonST" to="Control/ButtonST" method="_on_button_rack_slot_pressed"]
+[connection signal="pressed" from="Control/ButtonQR" to="Control/ButtonQR" method="_on_button_rack_slot_pressed"]
+[connection signal="pressed" from="Control/ButtonOP" to="Control/ButtonOP" method="_on_button_rack_slot_pressed"]
+[connection signal="pressed" from="Control/ButtonMN" to="Control/ButtonMN" method="_on_button_rack_slot_pressed"]
+[connection signal="pressed" from="Control/ButtonKL" to="Control/ButtonKL" method="_on_button_rack_slot_pressed"]
+[connection signal="pressed" from="Control/ButtonIJ" to="Control/ButtonIJ" method="_on_button_rack_slot_pressed"]
+[connection signal="pressed" from="Control/ButtonGH" to="Control/ButtonGH" method="_on_button_rack_slot_pressed"]
+[connection signal="pressed" from="Control/ButtonEF" to="Control/ButtonEF" method="_on_button_rack_slot_pressed"]
+[connection signal="pressed" from="Control/ButtonCD" to="Control/ButtonCD" method="_on_button_rack_slot_pressed"]
+[connection signal="pressed" from="Control/ButtonAB" to="Control/ButtonAB" method="_on_button_rack_slot_pressed"]
 [connection signal="button_down" from="Control/Envelope" to="Control" method="_on_envelope_button_down"]
 [connection signal="button_up" from="Control/Envelope" to="Control" method="_on_envelope_button_up"]
 [connection signal="button_down" from="Control/Package" to="Control" method="_on_envelope_button_down"]

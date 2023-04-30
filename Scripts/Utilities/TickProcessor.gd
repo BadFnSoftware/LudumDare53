@@ -6,39 +6,70 @@ func processUpdate():
 
 
 func processTick():
-	processJobs("tick")
-	processHour()
-
 	if Vars.DEBUG:
+		print("Current second: ", Vars.TickerData.CurrentSecond)
+		print("Current minute: ", Vars.TickerData.CurrentMinute)
 		print("Current hour: ", Vars.TickerData.CurrentHour)
 		print("Current day: ", Vars.TickerData.CurrentDay)
 		print("Current week: ", Vars.TickerData.CurrentWeek)
 		print("Current month: ", Vars.TickerData.CurrentMonth)
 		print("Current year: ", Vars.TickerData.CurrentYear)
+		print("Total seconds played: ", Vars.TickerData.TotalSecondsPlayed)
+		print("Total minutes played: ", Vars.TickerData.TotalMinutesPlayed)
 		print("Total hours played: ", Vars.TickerData.TotalHoursPlayed)
 		print("Total days played: ", Vars.TickerData.TotalDaysPlayed)
 		print("Total weeks played: ", Vars.TickerData.TotalWeeksPlayed)
 		print("Total months played: ", Vars.TickerData.TotalMonthsPlayed)
 		print("Total years played: ", Vars.TickerData.TotalYearsPlayed)
-		print("Current tick rate: ", Vars.CurrentTickRate)
-		print("Current ticks per hour: ", Vars.TickerData.CurrentTicksPerHour)
+		print("Current seconds left: ", Vars.TickerData.CurrentSecondsLeft)
+		print("Current minutes left: ", Vars.TickerData.CurrentMinutesLeft)
 		print("Current tick timer: ", Vars.TickerData.TickTimer)
 		print("Current tick: ", Vars.TickerData.Tick)
 
+	Vars.TickerData.TickTimer += 1
+	Vars.TickerData.TotalSecondsPlayed += 1
+	
+	if Vars.TickerData.CurrentSecondsLeft > 0:
+		Vars.TickerData.CurrentSecondsLeft -= 1
+	elif Vars.TickerData.CurrentSecondsLeft <= 0:
+		Vars.TickerData.CurrentSecondsLeft = 59
+
+	processJobs("tick")
+	
+	if Vars.TickerData.CurrentMinutesLeft <= 0 && Vars.TickerData.CurrentSecondsLeft <= 0 && Vars.TickerData.TotalSecondsPlayed <= Vars.SECONDS_WIN_CONDITION:
+		CommonUtils.setEndPanelDisplay()
+		Vars.EndPanel.visible = true
+
+	if Vars.TickerData.TickTimer >= Vars.TICKS_PER_MINUTE:
+		processMinute()
+
+
+func processMinute():
+	Vars.TickerData.TickTimer = 0
+	Vars.TickerData.MinuteTickTimer += 1
+	Vars.TickerData.CurrentMinute += 1
+	Vars.TickerData.TotalMinutesPlayed += 1
+	Vars.TickerData.CurrentMinutesLeft -= 1
+
+	processJobs("minute")
+	
+	if Vars.TickerData.CurrentMinutesLeft <= 0 && Vars.TickerData.CurrentSecondsLeft <= 0 && Vars.TickerData.TotalSecondsPlayed <= Vars.SECONDS_WIN_CONDITION:
+		CommonUtils.setEndPanelDisplay()
+		Vars.EndPanel.visible = true
+
+	if Vars.TickerData.MinuteTickTimer == Vars.MINUTES_PER_HOUR:
+		processHour()
+
 
 func processHour():
-	Vars.TickerData.TickTimer += 1
+	Vars.TickerData.HourTickTimer += 1
+	Vars.TickerData.CurrentHour += 1
+	Vars.TickerData.TotalHoursPlayed += 1
 
-	if Vars.TickerData.TickTimer >= Vars.TickerData.CurrentTicksPerHour:
-		Vars.TickerData.TickTimer = 0
-		Vars.TickerData.HourTickTimer += 1
-		Vars.TickerData.CurrentHour += 1
-		Vars.TickerData.TotalHoursPlayed += 1
+	processJobs("hourly")
 
-		processJobs("hourly")
-
-		if Vars.TickerData.HourTickTimer == Vars.HOURS_PER_DAY:
-			processDay()
+	if Vars.TickerData.HourTickTimer == Vars.HOURS_PER_DAY:
+		processDay()
 
 
 func processDay():
@@ -109,6 +140,12 @@ func processJobs(jobType):
 
 			jobClass = Vars.TickJobFuncs
 			jobFuncs = Vars.TickJobs
+		"minute":
+			if Vars.DEBUG:
+				print("Processing minute jobs")
+
+			jobClass = Vars.MinuteJobFuncs
+			jobFuncs = Vars.HourlyTickJobs
 		"hourly":
 			if Vars.DEBUG:
 				print("Processing hourly jobs")
@@ -143,4 +180,3 @@ func processJobs(jobType):
 	if !jobFuncs.is_empty():
 		for i in jobFuncs.size():
 			Callable(jobClass, jobFuncs[i]).call()
-

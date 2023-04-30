@@ -1,4 +1,4 @@
-class_name TickJobFuncsClass
+class_name MinuteJobFuncsClass
 extends Node
 
 

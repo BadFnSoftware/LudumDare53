@@ -1,4 +1,4 @@
-class_name DailyJobClass
+class_name DailyJobFuncsClass
 extends Node
 
 

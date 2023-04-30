@@ -5,9 +5,12 @@ extends Node
 func _ready():
 	Vars.Player = preload("res://Scripts/Resources/Player.gd").new()
 	Vars.TickerData = preload("res://Scripts/Resources/Ticks.gd").new()
+	
+	Vars.TickerData.Tick = Vars.TICK_RATE
 
 	Vars.UpdateJobFuncs = preload("res://Scripts/TickJobs/UpdateJobFuncs.gd").new()
 	Vars.TickJobFuncs = preload("res://Scripts/TickJobs/TickJobFuncs.gd").new()
+	Vars.MinuteJobFuncs = preload("res://Scripts/TickJobs/MinuteJobFuncs.gd").new()
 	Vars.HourlyJobFuncs = preload("res://Scripts/TickJobs/HourlyJobFuncs.gd").new()
 	Vars.DailyJobFuncs = preload("res://Scripts/TickJobs/DailyJobFuncs.gd").new()
 	Vars.WeeklyJobFuncs = preload("res://Scripts/TickJobs/WeeklyJobFuncs.gd").new()
@@ -22,7 +25,7 @@ func _process(delta):
 
 func _on_start_button_pressed():
 	Vars.Player.AvailEnvelopes = CommonUtils.gatherAllEnvelopes()
-	
+
 	if !Vars.Player.AvailEnvelopes.is_empty():
 		Vars.Player.NumEnvelopesAvail = Vars.Player.AvailEnvelopes.size()
 		Vars.Player.NumTotalEnvelopes = Vars.Player.NumEnvelopesAvail

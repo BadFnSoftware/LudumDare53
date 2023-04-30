@@ -16,8 +16,20 @@ func _ready():
 	ScanningButtonDisabled = get_node("%ScanningButtonDisabled")
 	EnvelopeNamePanel = get_node("%EnvelopeNamePanel")
 	CustomerName = get_node("%CustomerName")
+
+	Vars.EndPanel = get_node("%EndPanel")
+	Vars.NumEnvelopesSortedNode = get_node("%NumEnvelopesSorted")
+	Vars.NumPackagesSortedNode = get_node("%NumPackagesSorted")
+	Vars.NumSortingMistakesNode = get_node("%NumSortingMistakes")
+	Vars.NumDangerousPackagesSortedNode = get_node("%NumDangerousPackagesSorted")
+	Vars.NumDangerousPackageSortingMistakesNode = get_node("%NumDangerousPackageSortingMistakes")
 	
+	Vars.ClockMinutesNode = get_node("%ClockMinutes")
+	Vars.ClockSecondsNode = get_node("%ClockSeconds")
+
 	Vars.TickerData.GameInProgress = true
+	
+	CommonUtils.updateDisplayClock()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,27 +39,39 @@ func _process(delta):
 
 func _on_button_rack_slot_pressed():
 	var RackSlotId = self.get_meta("RackSlotId")
-	
+
 	if Vars.Player.CurrentEnvelope != null:
-		Vars.Player.NumEnvelopesSorted += 1
-	
 		if RackSlotId != Vars.Player.CurrentEnvelope.RackSlotId:
 			Vars.Player.NumMistakes += 1
-		
+
 		if Vars.Player.CurrentEnvelope.IsPackage == true:
+			if Vars.Player.CurrentEnvelope.IsDangerous == true:
+				Vars.Player.NumDangerousPackagesSorted += 1
+
+				if Vars.Player.CurrentEnvelope.IsScanned == false || RackSlotId != Vars.Player.CurrentEnvelope.RackSlotId:
+					Vars.Player.NumDangerousPackageMistakes += 1
+			else:
+				Vars.Player.NumPackagesSorted += 1
+
+				if RackSlotId != Vars.Player.CurrentEnvelope.RackSlotId:
+					Vars.Player.NumMistakes += 1
+
 			ScanningButton.visible = false
 			ScanningButtonDisabled.visible = true
 			Package.visible = false
-			
-			if Vars.Player.CurrentEnvelope.IsDangerous == true:
-				Vars.Player.NumDangerousPackagesSorted += 1
-				
-				if Vars.Player.CurrentEnvelope.IsScanned == false:
-					Vars.Player.NumDangerousPackageMistakes += 1
 		else:
-			Envelope.visible = false
-		
+			Vars.Player.NumEnvelopesSorted += 1
+
+			if RackSlotId != Vars.Player.CurrentEnvelope.RackSlotId:
+				Vars.Player.NumMistakes += 1
+
+			Envelope.visible = false 
+
 		Vars.Player.CurrentEnvelope = null
+
+		if Vars.Player.NumEnvelopesAvail <= 0:
+			CommonUtils.setEndPanelDisplay()
+			Vars.EndPanel.visible = true
 	else:
 		print("No evelope available to sort!")
 

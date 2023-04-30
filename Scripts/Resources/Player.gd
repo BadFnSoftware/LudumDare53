@@ -1,7 +1,6 @@
 class_name PlayerClass
 extends Resource
 
-#@export var HasEnvelope := false
 @export var CurrentEnvelope: CustomerEnvelopes
 @export var NumEnvelopesSorted := 0
 @export var NumPackagesSorted := 0
