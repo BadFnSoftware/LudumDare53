@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://nw0yc4iosvye" path="res://Assets/UI/MainGame/Buttons/Spr_xraybutton_pressed_01.png" id="9_dgwim"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_y1lun")
 metadata/_edit_horizontal_guides_ = [189.0, 202.0, 215.0, 229.0, 243.0]
 metadata/_edit_vertical_guides_ = [156.0, 474.0]
 
@@ -25,7 +26,6 @@ offset_right = 640.0
 offset_bottom = 360.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_y1lun")
 
 [node name="SortingRack" type="TextureRect" parent="Control"]
 texture_filter = 1
@@ -572,7 +572,7 @@ offset_bottom = 279.0
 theme_override_fonts/font = ExtResource("6_qrfyu")
 text = "End your shift"
 
-[connection signal="pressed" from="Control/SortingBin" to="Control" method="_on_sorting_bin_pressed"]
+[connection signal="pressed" from="Control/SortingBin" to="." method="_on_sorting_bin_pressed"]
 [connection signal="pressed" from="Control/ButtonXZ" to="Control/ButtonXZ" method="_on_button_rack_slot_pressed"]
 [connection signal="pressed" from="Control/ButtonUW" to="Control/ButtonUW" method="_on_button_rack_slot_pressed"]
 [connection signal="pressed" from="Control/ButtonST" to="Control/ButtonST" method="_on_button_rack_slot_pressed"]
@@ -585,11 +585,10 @@ text = "End your shift"
 [connection signal="pressed" from="Control/ButtonEF" to="Control/ButtonEF" method="_on_button_rack_slot_pressed"]
 [connection signal="pressed" from="Control/ButtonCD" to="Control/ButtonCD" method="_on_button_rack_slot_pressed"]
 [connection signal="pressed" from="Control/ButtonAB" to="Control/ButtonAB" method="_on_button_rack_slot_pressed"]
-[connection signal="button_down" from="Control/Envelope" to="Control" method="_on_envelope_button_down"]
-[connection signal="button_up" from="Control/Envelope" to="Control" method="_on_envelope_button_up"]
-[connection signal="button_down" from="Control/Package" to="Control" method="_on_envelope_button_down"]
-[connection signal="button_up" from="Control/Package" to="Control" method="_on_envelope_button_up"]
-[connection signal="pressed" from="Control/Package" to="Control" method="_on_envelope_pressed"]
-[connection signal="pressed" from="Control/ReportPackageButton" to="Control" method="_on_report_package_button_pressed"]
-[connection signal="pressed" from="Control/ScanningButton" to="Control" method="_on_scanning_button_pressed"]
-[connection signal="pressed" from="Control/EndPanel/EndShift" to="Control" method="_on_end_shift_pressed"]
+[connection signal="button_down" from="Control/Envelope" to="." method="_on_envelope_button_down"]
+[connection signal="button_up" from="Control/Envelope" to="." method="_on_envelope_button_up"]
+[connection signal="button_down" from="Control/Package" to="." method="_on_envelope_button_down"]
+[connection signal="button_up" from="Control/Package" to="." method="_on_envelope_button_up"]
+[connection signal="pressed" from="Control/ReportPackageButton" to="." method="_on_report_package_button_pressed"]
+[connection signal="pressed" from="Control/ScanningButton" to="." method="_on_scanning_button_pressed"]
+[connection signal="pressed" from="Control/EndPanel/EndShift" to="." method="_on_end_shift_pressed"]

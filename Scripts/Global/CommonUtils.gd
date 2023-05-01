@@ -39,7 +39,7 @@ func generateRandomEnvelope():
 		var randomEnvelope = Vars.Player.AvailEnvelopes[index]
 
 		if maxRng > 0:
-			Vars.Player.AvailEnvelopes.remove_at (index)
+			Vars.Player.AvailEnvelopes.remove_at(index)
 		else:
 			Vars.Player.AvailEnvelopes = []
 
@@ -57,7 +57,7 @@ func generateRandomComplaintEnvelope():
 		var randomEnvelope = Vars.Player.CustomerComplaintList[index]
 
 		if maxRng > 0:
-			Vars.Player.CustomerComplaintList.remove_at (index)
+			Vars.Player.CustomerComplaintList.remove_at(index)
 		else:
 			Vars.Player.CustomerComplaintList = []
 

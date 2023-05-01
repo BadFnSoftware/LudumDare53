@@ -40,6 +40,7 @@ var BestResponseTextNode: Node
 var GoodResponseTextNode: Node
 var BadResponseTextNode: Node
 var WorstResponseTextNode: Node
+var CustomerDialogNode: Node
 
 var UpdateJobFuncs: UpdateJobFuncsClass
 var TickJobFuncs: TickJobFuncsClass

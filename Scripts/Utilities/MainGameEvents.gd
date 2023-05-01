@@ -48,11 +48,6 @@ func _ready():
 			Envelope.visible = true
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
-
 func _on_button_rack_slot_pressed():
 	var RackSlotId = self.get_meta("RackSlotId")
 
