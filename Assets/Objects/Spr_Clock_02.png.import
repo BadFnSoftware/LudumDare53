@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwjw6kmoujm2f"
-path="res://.godot/imported/Spr_xrayscanbad_01.png-64e66f7c84961cbb102bf11aef486d58.ctex"
+uid="uid://3t7u025ccc2"
+path="res://.godot/imported/Spr_Clock_02.png-c70743339652868fc51b43efac7c74cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/Spr_xrayscanbad_01.png"
-dest_files=["res://.godot/imported/Spr_xrayscanbad_01.png-64e66f7c84961cbb102bf11aef486d58.ctex"]
+source_file="res://Assets/Objects/Spr_Clock_02.png"
+dest_files=["res://.godot/imported/Spr_Clock_02.png-c70743339652868fc51b43efac7c74cb.ctex"]
 
 [params]
 

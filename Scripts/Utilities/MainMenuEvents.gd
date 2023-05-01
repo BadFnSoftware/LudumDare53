@@ -24,6 +24,8 @@ func _ready():
 
 
 func _on_start_button_pressed():
+	SoundController.playSound("buttonpress1")
+
 	Vars.Player.AvailEnvelopes = CommonUtils.gatherAllEnvelopes()
 
 	if !Vars.Player.AvailEnvelopes.is_empty():

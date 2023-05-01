@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwjw6kmoujm2f"
-path="res://.godot/imported/Spr_xrayscanbad_01.png-64e66f7c84961cbb102bf11aef486d58.ctex"
+uid="uid://bm5g3xt1631ah"
+path="res://.godot/imported/Spr_SortingScreen_02.png-f1907c25ba76010b6bf040fb49ff42b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/Spr_xrayscanbad_01.png"
-dest_files=["res://.godot/imported/Spr_xrayscanbad_01.png-64e66f7c84961cbb102bf11aef486d58.ctex"]
+source_file="res://Assets/Scenes/MainGame/Spr_SortingScreen_02.png"
+dest_files=["res://.godot/imported/Spr_SortingScreen_02.png-f1907c25ba76010b6bf040fb49ff42b7.ctex"]
 
 [params]
 

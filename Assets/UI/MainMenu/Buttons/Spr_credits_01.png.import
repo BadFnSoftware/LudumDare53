@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwjw6kmoujm2f"
-path="res://.godot/imported/Spr_xrayscanbad_01.png-64e66f7c84961cbb102bf11aef486d58.ctex"
+uid="uid://dmxc6d0qvxd84"
+path="res://.godot/imported/Spr_credits_01.png-450527beb4c8921e56be9cdc4af5bcc6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/Spr_xrayscanbad_01.png"
-dest_files=["res://.godot/imported/Spr_xrayscanbad_01.png-64e66f7c84961cbb102bf11aef486d58.ctex"]
+source_file="res://Assets/UI/MainMenu/Buttons/Spr_credits_01.png"
+dest_files=["res://.godot/imported/Spr_credits_01.png-450527beb4c8921e56be9cdc4af5bcc6.ctex"]
 
 [params]
 

@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://pm2xi56yr15a"]
+[gd_scene load_steps=7 format=3 uid="uid://pm2xi56yr15a"]
 
 [ext_resource type="Script" path="res://Scripts/Utilities/MainMenuEvents.gd" id="1_vsmc4"]
 [ext_resource type="Texture2D" uid="uid://cf14e6kc4hl61" path="res://Assets/UI/MainMenu/Logo/Spr_MailMayhem_01.png" id="2_5063s"]
 [ext_resource type="Texture2D" uid="uid://b5tlckntajckr" path="res://Assets/UI/MainMenu/Buttons/Spr_StartGame_01.png" id="2_ah6iq"]
 [ext_resource type="Texture2D" uid="uid://dyaaqcctkrspl" path="res://Assets/Scenes/MainMenu/Spr_MainMenu_01.bmp" id="2_h1gyg"]
+[ext_resource type="Texture2D" uid="uid://dmxc6d0qvxd84" path="res://Assets/UI/MainMenu/Buttons/Spr_credits_01.png" id="4_balsh"]
 [ext_resource type="FontFile" uid="uid://br16r50alhowl" path="res://Assets/Fonts/PressStart2P/PressStart2P.otf" id="5_vpilt"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_vsmc4")
-metadata/_edit_vertical_guides_ = [116.0]
+metadata/_edit_vertical_guides_ = [116.0, 39.0]
 
 [node name="Control" type="Control" parent="."]
 texture_filter = 1
@@ -39,6 +40,16 @@ offset_right = 122.0
 offset_bottom = 270.0
 scale = Vector2(2, 2)
 texture_normal = ExtResource("2_ah6iq")
+
+[node name="CreditsButton" type="TextureButton" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 39.0
+offset_top = 298.0
+offset_right = 98.0
+offset_bottom = 338.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("4_balsh")
 
 [node name="Logo" type="TextureRect" parent="Control"]
 texture_filter = 1
@@ -106,4 +117,5 @@ offset_bottom = 219.0
 text = "Close Credits"
 
 [connection signal="pressed" from="Control/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/CreditsButton" to="." method="_on_open_credits_pressed"]
 [connection signal="pressed" from="Control/CreditsPanel/CloseCredits" to="." method="_on_close_credits_pressed"]

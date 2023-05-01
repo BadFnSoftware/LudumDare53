@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CustomerEnvelopes" load_steps=2 format=3 uid="uid://ut30uqaane43"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/CustomerEnvelopes.gd" id="1_7fa3m"]
+
+[resource]
+script = ExtResource("1_7fa3m")
+FirstName = "Sofia"
+LastName = "Wong"
+RackSlotId = 11
+IsPackage = false
+IsDangerous = false
+IsScanned = false
+Reported = false
+Contents = ""

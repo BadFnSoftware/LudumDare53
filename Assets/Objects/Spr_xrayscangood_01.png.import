@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwjw6kmoujm2f"
-path="res://.godot/imported/Spr_xrayscanbad_01.png-64e66f7c84961cbb102bf11aef486d58.ctex"
+uid="uid://c4umy8f5db5in"
+path="res://.godot/imported/Spr_xrayscangood_01.png-35a3574e787e3bbff814095f7e65850d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/Spr_xrayscanbad_01.png"
-dest_files=["res://.godot/imported/Spr_xrayscanbad_01.png-64e66f7c84961cbb102bf11aef486d58.ctex"]
+source_file="res://Assets/Objects/Spr_xrayscangood_01.png"
+dest_files=["res://.godot/imported/Spr_xrayscangood_01.png-35a3574e787e3bbff814095f7e65850d.ctex"]
 
 [params]
 

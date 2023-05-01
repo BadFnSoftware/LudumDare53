@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CustomerEnvelopes" load_steps=2 format=3 uid="uid://chmusndy8mdbs"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/CustomerEnvelopes.gd" id="1_abmfs"]
+
+[resource]
+script = ExtResource("1_abmfs")
+FirstName = "Zachary"
+LastName = "Evans"
+RackSlotId = 3
+IsPackage = true
+IsDangerous = false
+IsScanned = false
+Reported = false
+Contents = "Spr_xrayscangood_01.png"

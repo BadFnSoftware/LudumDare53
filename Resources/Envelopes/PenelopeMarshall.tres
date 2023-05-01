@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CustomerEnvelopes" load_steps=2 format=3 uid="uid://dp5ddcapm74gn"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/CustomerEnvelopes.gd" id="1_26q23"]
+
+[resource]
+script = ExtResource("1_26q23")
+FirstName = "Penelope"
+LastName = "Marshall"
+RackSlotId = 7
+IsPackage = true
+IsDangerous = true
+IsScanned = false
+Reported = false
+Contents = "Spr_xrayscanbad_02.png"

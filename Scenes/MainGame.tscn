@@ -1,17 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmojwdgcp3vai"]
+[gd_scene load_steps=12 format=3 uid="uid://bmojwdgcp3vai"]
 
-[ext_resource type="Texture2D" uid="uid://c27ggghh06jor" path="res://Assets/Scenes/MainGame/Spr_SortingScreen_01.png" id="1_b2qmk"]
 [ext_resource type="Script" path="res://Scripts/Utilities/MainGameEvents.gd" id="1_y1lun"]
-[ext_resource type="Texture2D" uid="uid://b6vkxrkv6vot1" path="res://Assets/Scenes/MainGame/Spr_Desk_01.png" id="3_0cqi6"]
-[ext_resource type="Texture2D" uid="uid://dti3t81ualh4q" path="res://Assets/UI/MainGame/Buttons/Spr_MailCart_01.png" id="4_w3pke"]
+[ext_resource type="Texture2D" uid="uid://bm5g3xt1631ah" path="res://Assets/Scenes/MainGame/Spr_SortingScreen_02.png" id="2_sa1bs"]
+[ext_resource type="Texture2D" uid="uid://dqddfhkijmxt1" path="res://Assets/UI/MainGame/Buttons/Spr_MailCart_02.png" id="3_3othk"]
 [ext_resource type="Texture2D" uid="uid://cx0kky5l2mx42" path="res://Assets/Objects/Spr_Mail_01.png" id="5_q1nwr"]
 [ext_resource type="Texture2D" uid="uid://dndqnd6fa2t0n" path="res://Assets/Objects/Spr_package_01.png" id="6_2mtx8"]
 [ext_resource type="FontFile" uid="uid://br16r50alhowl" path="res://Assets/Fonts/PressStart2P/PressStart2P.otf" id="6_qrfyu"]
 [ext_resource type="Texture2D" uid="uid://qgf03wdhtcmt" path="res://Assets/UI/MainGame/Buttons/Spr_ReportButton_01.png" id="8_60bu8"]
-[ext_resource type="Texture2D" uid="uid://cfp432ciweotg" path="res://Assets/Objects/Spr_Clock_01.png" id="8_odlrs"]
 [ext_resource type="Texture2D" uid="uid://dquo0oks84jwl" path="res://Assets/UI/MainGame/Buttons/Spr_xraybutton_normal_01.png" id="8_p0x4u"]
 [ext_resource type="Texture2D" uid="uid://d33t43ucypug8" path="res://Assets/UI/MainGame/Buttons/Spr_ReportButton_02.png" id="9_bjyt1"]
 [ext_resource type="Texture2D" uid="uid://nw0yc4iosvye" path="res://Assets/UI/MainGame/Buttons/Spr_xraybutton_pressed_01.png" id="9_dgwim"]
+[ext_resource type="Texture2D" uid="uid://3t7u025ccc2" path="res://Assets/Objects/Spr_Clock_02.png" id="10_5yegr"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_y1lun")
@@ -33,29 +32,18 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(4, 4)
-texture = ExtResource("1_b2qmk")
-stretch_mode = 2
-
-[node name="Desk" type="TextureRect" parent="Control"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 160.0
-offset_top = 90.0
-offset_right = 320.0
-offset_bottom = 180.0
-scale = Vector2(3, 3)
-texture = ExtResource("3_0cqi6")
+texture = ExtResource("2_sa1bs")
 stretch_mode = 2
 
 [node name="SortingBin" type="TextureButton" parent="Control"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 33.0
-offset_top = 265.0
-offset_right = 73.0
-offset_bottom = 305.0
+offset_left = 5.0
+offset_top = 225.0
+offset_right = 45.0
+offset_bottom = 265.0
 scale = Vector2(4, 4)
-texture_normal = ExtResource("4_w3pke")
+texture_normal = ExtResource("3_3othk")
 
 [node name="ButtonXZ" type="Button" parent="Control"]
 layout_mode = 0
@@ -182,9 +170,9 @@ unique_name_in_owner = true
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = 402.0
+offset_left = 339.0
 offset_top = 219.0
-offset_right = 442.0
+offset_right = 379.0
 offset_bottom = 259.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("5_q1nwr")
@@ -194,9 +182,9 @@ unique_name_in_owner = true
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = 390.0
+offset_left = 319.0
 offset_top = 190.0
-offset_right = 454.0
+offset_right = 383.0
 offset_bottom = 254.0
 scale = Vector2(2, 2)
 texture_normal = ExtResource("6_2mtx8")
@@ -214,6 +202,16 @@ scale = Vector2(3, 3)
 texture_normal = ExtResource("8_60bu8")
 texture_pressed = ExtResource("9_bjyt1")
 
+[node name="ScanningButtonBackground" type="ColorRect" parent="Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 541.0
+offset_top = 253.0
+offset_right = 636.0
+offset_bottom = 358.0
+color = Color(0.345098, 0.345098, 0.345098, 1)
+
 [node name="ScanningButton" type="TextureButton" parent="Control"]
 unique_name_in_owner = true
 visible = false
@@ -227,7 +225,7 @@ scale = Vector2(3, 3)
 texture_normal = ExtResource("8_p0x4u")
 texture_pressed = ExtResource("9_dgwim")
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="Clock" type="TextureRect" parent="Control"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 169.0
@@ -235,15 +233,15 @@ offset_top = 207.0
 offset_right = 217.0
 offset_bottom = 247.0
 scale = Vector2(3, 3)
-texture = ExtResource("8_odlrs")
+texture = ExtResource("10_5yegr")
 stretch_mode = 2
 
 [node name="ClockMinutes" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 203.0
+offset_left = 200.0
 offset_top = 257.0
-offset_right = 243.0
+offset_right = 240.0
 offset_bottom = 278.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 16
@@ -257,9 +255,9 @@ autowrap_mode = 0
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 0
-offset_left = 244.0
+offset_left = 242.0
 offset_top = 257.0
-offset_right = 284.0
+offset_right = 282.0
 offset_bottom = 281.0
 theme_override_fonts/normal_font = ExtResource("6_qrfyu")
 theme_override_font_sizes/normal_font_size = 16
@@ -611,6 +609,7 @@ autowrap_mode = 0
 
 [node name="ErrorToastNotificationBackground" type="ColorRect" parent="ToastNotificationControl"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 313.0
 offset_top = 367.0
 offset_right = 634.0

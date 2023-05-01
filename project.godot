@@ -25,6 +25,7 @@ Vars="*res://Scripts/Global/Vars.gd"
 CommonUtils="*res://Scripts/Global/CommonUtils.gd"
 Ticker="*res://Scripts/Global/Ticker.gd"
 TickProcessor="*res://Scripts/Utilities/TickProcessor.gd"
+SoundController="*res://Scripts/Global/SoundController.gd"
 
 [display]
 

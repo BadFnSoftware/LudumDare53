@@ -4,7 +4,7 @@ const DEBUG := false
 const VERBOSE := false
 
 const TICK_RATE := 1 # In seconds
-const PLAY_CLOCK := 5 # In seconds
+const PLAY_CLOCK := 1 # In seconds
 const TICKS_PER_MINUTE := 60
 const SECONDS_WIN_CONDITION := 600
 const MINUTES_PER_HOUR := 60
@@ -51,6 +51,7 @@ var EndGameOverallGrade: String
 var EndGameIsFired := false
 
 var ScanningButton: Node
+var ScanningButtonBackground: Node
 var ClockMinutesNode: Node
 var ClockSecondsNode: Node
 var CustomerModelNode: Node

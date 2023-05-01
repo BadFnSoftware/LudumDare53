@@ -13,7 +13,6 @@ func getDirectoryContents(path):
 		var file_name = dir.get_next()
 
 		while file_name != "":
-			print(file_name)
 			if ".import" in file_name:
 				file_name = file_name.trim_suffix(".import")
 
@@ -23,7 +22,7 @@ func getDirectoryContents(path):
 			contents.append(load(path + "/" + file_name))
 			file_name = dir.get_next()
 	else:
-		print("An error occurred when trying to access the path: " + path + ".")
+		CommonUtils.ToastNotifications.ShowErrorToast("An error occurred when trying to access the path: " + path + ".")
 
 	return contents
 
@@ -36,7 +35,7 @@ func getNewRandomCustomer():
 
 func generateRandomEnvelope():
 	if Vars.Player.AvailEnvelopes.is_empty():
-		print("No envelopes/packages are left!")
+		CommonUtils.ToastNotifications.ShowToast("No envelopes/packages are left!")
 		return null
 	else:
 		var maxRng = Vars.Player.AvailEnvelopes.size() - 1
@@ -54,7 +53,7 @@ func generateRandomEnvelope():
 
 func generateRandomComplaintEnvelope():
 	if Vars.Player.CustomerComplaintList.is_empty():
-		print("No envelopes/packages are left!")
+		CommonUtils.ToastNotifications.ShowToast("No complaints are left!")
 		return null
 	else:
 		var maxRng = Vars.Player.CustomerComplaintList.size() - 1
@@ -72,7 +71,7 @@ func generateRandomComplaintEnvelope():
 
 func generateRandomCustomerModel():
 	if Vars.Player.AvailCustomerModels.is_empty():
-		print("No customer models are avail!")
+		CommonUtils.ToastNotifications.ShowErrorToast("No customer models are avail!")
 		return null
 	else:
 		var maxRng = Vars.Player.AvailCustomerModels.size() - 1
@@ -85,7 +84,7 @@ func generateRandomCustomerModel():
 
 func generateRandomCustomerDialogTree():
 	if Vars.Player.AvailCustomerDialogTrees.is_empty():
-		print("No customer models are avail!")
+		CommonUtils.ToastNotifications.ShowErrorToast("No customer dialogs are avail!")
 		return null
 	else:
 		var maxRng = Vars.Player.AvailCustomerDialogTrees.size() - 1
@@ -101,7 +100,7 @@ func gatherAllEnvelopes():
 	var availEnvelopes = self.getDirectoryContents(path)
 
 	if availEnvelopes.is_empty():
-		print("Error gathering available envelopes, came up empty...")
+		CommonUtils.ToastNotifications.ShowErrorToast("No avail envelopes!")
 		return []
 	else:
 		return availEnvelopes
@@ -112,7 +111,7 @@ func gatherAllCustomerModels():
 	var AvailCustomerModels = self.getDirectoryContents(path)
 
 	if AvailCustomerModels.is_empty():
-		print("Error gathering available customers, came up empty...")
+		CommonUtils.ToastNotifications.ShowErrorToast("No avail customer models!")
 		return []
 	else:
 		return AvailCustomerModels
@@ -123,7 +122,7 @@ func gatherAllCustomerDialogTrees():
 	var AvailCustomerDialogTrees = self.getDirectoryContents(path)
 
 	if AvailCustomerDialogTrees.is_empty():
-		print("Error gathering available customer dialog trees, came up empty...")
+		CommonUtils.ToastNotifications.ShowErrorToast("No avail customer dialogs!")
 		return []
 	else:
 		return AvailCustomerDialogTrees

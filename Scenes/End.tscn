@@ -64,6 +64,7 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="EnvelopesSorted" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_left = 121.0
 offset_top = 150.0
 offset_right = 248.0
@@ -78,6 +79,7 @@ autowrap_mode = 0
 
 [node name="NumEnvelopesSorted" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 439.0
 offset_top = 150.0
 offset_right = 572.0
@@ -91,6 +93,7 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="PackagesSorted" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_left = 121.0
 offset_top = 163.0
 offset_right = 233.0
@@ -105,6 +108,7 @@ autowrap_mode = 0
 
 [node name="NumPackagesSorted" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 439.0
 offset_top = 163.0
 offset_right = 572.0
@@ -118,6 +122,7 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="SortingMistakes" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_left = 121.0
 offset_top = 176.0
 offset_right = 240.0
@@ -132,6 +137,7 @@ autowrap_mode = 0
 
 [node name="NumSortingMistakes" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 439.0
 offset_top = 176.0
 offset_right = 573.0
@@ -145,6 +151,7 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="DangerousPackagesSorted" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_left = 121.0
 offset_top = 190.0
 offset_right = 303.0
@@ -159,6 +166,7 @@ autowrap_mode = 0
 
 [node name="NumDangerousPackagesSorted" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 439.0
 offset_top = 190.0
 offset_right = 569.0
@@ -172,6 +180,7 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="DangerousPackageSortingMistakes" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_left = 121.0
 offset_top = 204.0
 offset_right = 366.0
@@ -186,6 +195,7 @@ autowrap_mode = 0
 
 [node name="NumDangerousPackageSortingMistakes" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 439.0
 offset_top = 204.0
 offset_right = 570.0
@@ -199,6 +209,7 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="NotSorted" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_left = 121.0
 offset_top = 217.0
 offset_right = 366.0
@@ -213,6 +224,7 @@ autowrap_mode = 0
 
 [node name="NumNotSorted" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 439.0
 offset_top = 217.0
 offset_right = 570.0
@@ -226,6 +238,7 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="PackagesReported" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_left = 121.0
 offset_top = 231.0
 offset_right = 366.0
@@ -240,6 +253,7 @@ autowrap_mode = 0
 
 [node name="NumPackagesReported" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 439.0
 offset_top = 231.0
 offset_right = 570.0
@@ -253,6 +267,7 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="PackagesReportedMistakes" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_left = 121.0
 offset_top = 246.0
 offset_right = 366.0
@@ -267,6 +282,7 @@ autowrap_mode = 0
 
 [node name="NumPackagesReportedMistakes" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 439.0
 offset_top = 246.0
 offset_right = 570.0
@@ -280,6 +296,7 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="HappyCustomers" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_left = 121.0
 offset_top = 260.0
 offset_right = 366.0
@@ -294,6 +311,7 @@ autowrap_mode = 0
 
 [node name="NumHappyCustomers" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 439.0
 offset_top = 260.0
 offset_right = 570.0
@@ -307,6 +325,7 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="ContentCustomers" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_left = 121.0
 offset_top = 273.0
 offset_right = 366.0
@@ -321,6 +340,7 @@ autowrap_mode = 0
 
 [node name="NumContentCustomers" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 439.0
 offset_top = 273.0
 offset_right = 570.0
@@ -334,6 +354,7 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="AngryCustomers" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_left = 121.0
 offset_top = 287.0
 offset_right = 366.0
@@ -348,6 +369,7 @@ autowrap_mode = 0
 
 [node name="NumAngryCustomers" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 439.0
 offset_top = 287.0
 offset_right = 570.0
@@ -408,6 +430,7 @@ autowrap_mode = 0
 
 [node name="ErrorToastNotificationBackground" type="ColorRect" parent="ToastNotificationControl"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 313.0
 offset_top = 367.0
 offset_right = 634.0

@@ -29,6 +29,7 @@ func _ready():
 	CustomerName = get_node("%CustomerName")
 
 	Vars.ScanningButton = get_node("%ScanningButton")
+	Vars.ScanningButtonBackground = get_node("%ScanningButtonBackground")
 	Vars.EndPanel = get_node("%EndPanel")
 	Vars.NumEnvelopesSortedNode = get_node("%NumEnvelopesSorted")
 	Vars.NumPackagesSortedNode = get_node("%NumPackagesSorted")
@@ -54,6 +55,7 @@ func _ready():
 
 		if Vars.Player.CurrentEnvelope.IsPackage == true:
 			Vars.ScanningButton.visible = false
+			Vars.ScanningButtonBackground.visible = false
 			Package.visible = true
 			ReportPackageButton.visible = true
 		else:
@@ -83,6 +85,7 @@ func _on_button_rack_slot_pressed():
 					Vars.Player.HappyCustomerList.append(Vars.Player.CurrentEnvelope)
 
 			Vars.ScanningButton.visible = false
+			Vars.ScanningButtonBackground.visible = false
 			Package.visible = false
 			ReportPackageButton.visible = false
 		else:
@@ -117,6 +120,7 @@ func _on_sorting_bin_pressed():
 
 		if Vars.Player.CurrentEnvelope.IsPackage == true:
 			Vars.ScanningButton.visible = true
+			Vars.ScanningButtonBackground.visible = true
 			Package.visible = true
 		else:
 			Envelope.visible = true
