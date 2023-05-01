@@ -13,11 +13,15 @@ func getDirectoryContents(path):
 		var file_name = dir.get_next()
 
 		while file_name != "":
+			print(file_name)
 			if ".import" in file_name:
-				file_name = dir.get_next()
-			else:
-				contents.append(load(path + "/" + file_name))
-				file_name = dir.get_next()
+				file_name = file_name.trim_suffix(".import")
+
+			if ".remap" in file_name:
+				file_name = file_name.trim_suffix(".remap")
+
+			contents.append(load(path + "/" + file_name))
+			file_name = dir.get_next()
 	else:
 		print("An error occurred when trying to access the path: " + path + ".")
 
