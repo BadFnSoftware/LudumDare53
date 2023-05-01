@@ -34,6 +34,22 @@ var NumPackagesReportedNode: Node
 var NumPackagesReportedMistakesNode: Node
 var EndPanel: Node
 
+var EndGameNumEnvelopesSortedNode: Node
+var EndGameNumPackagesSortedNode: Node
+var EndGameNumSortingMistakesNode: Node
+var EndGameNumDangerousPackagesSortedNode: Node
+var EndGameNumDangerousPackageSortingMistakesNode: Node
+var EndGameNumNotSortedNode: Node
+var EndGameNumPackagesReportedNode: Node
+var EndGameNumPackagesReportedMistakesNode: Node
+var EndGameNumHappyCustomersNode: Node
+var EndGameNumContentCustomersNode: Node
+var EndGameNumAngryCustomersNode: Node
+var EndGameOverallGradeNode: Node
+var EndGameYourFiredTextNode: Node
+var EndGameOverallGrade: String
+var EndGameIsFired := false
+
 var ScanningButton: Node
 var ClockMinutesNode: Node
 var ClockSecondsNode: Node

@@ -16,23 +16,356 @@ layout_mode = 0
 offset_right = 640.0
 offset_bottom = 363.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+[node name="OverallGradeLabel" type="RichTextLabel" parent="Control"]
+clip_contents = false
 layout_mode = 0
-offset_left = 274.0
-offset_top = 112.0
-offset_right = 325.0
-offset_bottom = 152.0
+offset_left = 205.0
+offset_top = 12.0
+offset_right = 401.0
+offset_bottom = 52.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "The End!"
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 14
+text = "Overall Grade:"
 fit_content = true
 scroll_active = false
+autowrap_mode = 0
+
+[node name="OverallGrade" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 0
+offset_left = 283.0
+offset_top = 46.0
+offset_right = 325.0
+offset_bottom = 88.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 42
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="YourFiredText" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+visible = false
+clip_contents = false
+layout_mode = 0
+offset_left = 169.0
+offset_top = 106.0
+offset_right = 455.0
+offset_bottom = 146.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 22
+text = "You're Fired!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="EnvelopesSorted" type="RichTextLabel" parent="Control"]
+offset_left = 121.0
+offset_top = 150.0
+offset_right = 248.0
+offset_bottom = 161.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "Envelopes Sorted:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumEnvelopesSorted" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+offset_left = 439.0
+offset_top = 150.0
+offset_right = 572.0
+offset_bottom = 161.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="PackagesSorted" type="RichTextLabel" parent="Control"]
+offset_left = 121.0
+offset_top = 163.0
+offset_right = 233.0
+offset_bottom = 173.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "Packages Sorted:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumPackagesSorted" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+offset_left = 439.0
+offset_top = 163.0
+offset_right = 572.0
+offset_bottom = 173.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SortingMistakes" type="RichTextLabel" parent="Control"]
+offset_left = 121.0
+offset_top = 176.0
+offset_right = 240.0
+offset_bottom = 185.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "Sorting Mistakes:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumSortingMistakes" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+offset_left = 439.0
+offset_top = 176.0
+offset_right = 573.0
+offset_bottom = 185.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="DangerousPackagesSorted" type="RichTextLabel" parent="Control"]
+offset_left = 121.0
+offset_top = 190.0
+offset_right = 303.0
+offset_bottom = 200.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "Dangerous Packages Sorted:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumDangerousPackagesSorted" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+offset_left = 439.0
+offset_top = 190.0
+offset_right = 569.0
+offset_bottom = 200.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="DangerousPackageSortingMistakes" type="RichTextLabel" parent="Control"]
+offset_left = 121.0
+offset_top = 204.0
+offset_right = 366.0
+offset_bottom = 214.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "Dangerous Package Sorting Mistakes:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumDangerousPackageSortingMistakes" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+offset_left = 439.0
+offset_top = 204.0
+offset_right = 570.0
+offset_bottom = 214.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NotSorted" type="RichTextLabel" parent="Control"]
+offset_left = 121.0
+offset_top = 217.0
+offset_right = 366.0
+offset_bottom = 227.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "Not Sorted:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumNotSorted" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+offset_left = 439.0
+offset_top = 217.0
+offset_right = 570.0
+offset_bottom = 227.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="PackagesReported" type="RichTextLabel" parent="Control"]
+offset_left = 121.0
+offset_top = 231.0
+offset_right = 366.0
+offset_bottom = 241.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "Packages Reported:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumPackagesReported" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+offset_left = 439.0
+offset_top = 231.0
+offset_right = 570.0
+offset_bottom = 241.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="PackagesReportedMistakes" type="RichTextLabel" parent="Control"]
+offset_left = 121.0
+offset_top = 246.0
+offset_right = 366.0
+offset_bottom = 256.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "Packages Reported Mistakes:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumPackagesReportedMistakes" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+offset_left = 439.0
+offset_top = 246.0
+offset_right = 570.0
+offset_bottom = 256.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="HappyCustomers" type="RichTextLabel" parent="Control"]
+offset_left = 121.0
+offset_top = 260.0
+offset_right = 366.0
+offset_bottom = 270.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "Happy Customers:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumHappyCustomers" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+offset_left = 439.0
+offset_top = 260.0
+offset_right = 570.0
+offset_bottom = 270.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ContentCustomers" type="RichTextLabel" parent="Control"]
+offset_left = 121.0
+offset_top = 273.0
+offset_right = 366.0
+offset_bottom = 283.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "Content Customers:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumContentCustomers" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+offset_left = 439.0
+offset_top = 273.0
+offset_right = 570.0
+offset_bottom = 283.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="AngryCustomers" type="RichTextLabel" parent="Control"]
+offset_left = 121.0
+offset_top = 287.0
+offset_right = 366.0
+offset_bottom = 297.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "Angry Customers:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NumAngryCustomers" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+offset_left = 439.0
+offset_top = 287.0
+offset_right = 570.0
+offset_bottom = 297.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 7
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
 
 [node name="EndGameButton" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 251.0
-offset_top = 219.0
-offset_right = 335.0
-offset_bottom = 250.0
+offset_left = 264.0
+offset_top = 314.0
+offset_right = 348.0
+offset_bottom = 345.0
 text = "End game"
 script = ExtResource("1_3rj4v")
 

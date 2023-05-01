@@ -142,6 +142,27 @@ func setEndPanelDisplay():
 		Vars.NumNotSortedNode.set_text(str(Vars.Player.NumEnvelopesAvail))
 
 
+func setEndGameDisplay():
+	Vars.EndGameNumEnvelopesSortedNode.set_text(str(Vars.Player.NumEnvelopesSorted))
+	Vars.EndGameNumPackagesSortedNode.set_text(str(Vars.Player.NumPackagesSorted))
+	Vars.EndGameNumSortingMistakesNode.set_text(str(Vars.Player.NumMistakes))
+	Vars.EndGameNumDangerousPackagesSortedNode.set_text(str(Vars.Player.NumDangerousPackagesSorted))
+	Vars.EndGameNumDangerousPackageSortingMistakesNode.set_text(str(Vars.Player.NumDangerousPackageMistakes))
+	Vars.EndGameNumPackagesReportedNode.set_text(str(Vars.Player.NumPackagesReported))
+	Vars.EndGameNumPackagesReportedMistakesNode.set_text(str(Vars.Player.NumPackagesReportedMistakes))
+	Vars.EndGameNumHappyCustomersNode.set_text(str(Vars.Player.NumHappyCustomers))
+	Vars.EndGameNumContentCustomersNode.set_text(str(Vars.Player.NumContentCustomers))
+	Vars.EndGameNumAngryCustomersNode.set_text(str(Vars.Player.NumAngryCustomers))
+
+	if Vars.Player.NumEnvelopesAvail > 0:
+		Vars.EndGameNumNotSortedNode.set_text(str(Vars.Player.NumEnvelopesAvail))
+	
+	Vars.EndGameOverallGradeNode.set_text(str(Vars.EndGameOverallGrade))
+	
+	if Vars.EndGameIsFired == true:
+		Vars.EndGameYourFiredTextNode.visible = true
+
+
 func setCustomerModel():
 	Vars.CustomerModelNode.texture = Vars.Player.CurrentCustomerModel
 
