@@ -20,11 +20,13 @@ offset_bottom = 357.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="Background" type="TextureRect" parent="Control"]
 texture_filter = 1
 layout_mode = 0
-offset_right = 641.0
-offset_bottom = 504.0
+offset_top = 3.0
+offset_right = 160.0
+offset_bottom = 93.0
+scale = Vector2(4, 4)
 texture = ExtResource("2_h1gyg")
 stretch_mode = 4
 
