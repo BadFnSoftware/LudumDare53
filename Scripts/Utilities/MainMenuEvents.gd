@@ -1,9 +1,13 @@
 class_name MainMenuEvents
 extends Node
 
+var CreditsPanelNode: Node
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	CreditsPanelNode = get_node("%CreditsPanel")
+
 	Vars.Player = preload("res://Scripts/Resources/Player.gd").new()
 	Vars.TickerData = preload("res://Scripts/Resources/Ticks.gd").new()
 
@@ -19,11 +23,6 @@ func _ready():
 	Vars.YearlyJobFuncs = preload("res://Scripts/TickJobs/YearlyJobFuncs.gd").new()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
-
 func _on_start_button_pressed():
 	Vars.Player.AvailEnvelopes = CommonUtils.gatherAllEnvelopes()
 
@@ -33,8 +32,12 @@ func _on_start_button_pressed():
 		Vars.Player.AvailCustomerModels = CommonUtils.gatherAllCustomerModels()
 		Vars.Player.AvailCustomerDialogTrees = CommonUtils.gatherAllCustomerDialogTrees()
 
-	get_tree().change_scene_to_file("res://Scenes/MainGame.tscn")
+	get_tree().change_scene_to_file("res://Scenes/HowToPlay.tscn")
 
 
-func _on_settings_button_pressed():
-	pass # Replace with function body.
+func _on_open_credits_pressed():
+	CreditsPanelNode.visible = true
+
+
+func _on_close_credits_pressed():
+	CreditsPanelNode.visible = false

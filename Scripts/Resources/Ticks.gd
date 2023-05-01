@@ -2,6 +2,7 @@ class_name Ticks
 extends Resource
 
 @export var Tick: float
+@export var TickDelta: float
 @export var GameInProgress := false
 @export var CurrentMinutesLeft: int
 @export var CurrentSecondsLeft := 0

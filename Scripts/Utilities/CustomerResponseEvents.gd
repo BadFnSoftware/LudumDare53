@@ -4,6 +4,21 @@ var AnsweredGreeting := false
 var AnsweredDemand := false
 
 
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	CommonUtils.ToastNotifications = preload("res://Scripts/Utilities/ToastNotifications.gd").new()
+	CommonUtils.ToastNotifications.ToastNotifcationNode = get_node("%ToastNotificationBackground")
+	CommonUtils.ToastNotifications.ToastNotifcationTextNode = get_node("%ToastNotificationText")
+
+	CommonUtils.ToastNotifications.ErrorToastNotifcationNode = get_node("%ErrorToastNotificationBackground")
+	CommonUtils.ToastNotifications.ErrorToastNotifcationTextNode = get_node("%ErrorToastNotificationText")
+
+	CommonUtils.ToastNotifications.ToastNotifcationDestinationNode = get_node("%ToastNotificationDestination")
+
+	CommonUtils.ToastNotifications.ToastNotifcationStartingPosition = CommonUtils.ToastNotifications.ToastNotifcationNode.get_position()
+	CommonUtils.ToastNotifications.ToastNotifcationDestination = Vector2(CommonUtils.ToastNotifications.ToastNotifcationStartingPosition.x, CommonUtils.ToastNotifications.ToastNotifcationDestinationNode.get_position().y)
+
+
 func _on_button_player_response_pressed():
 	var ResponseGrade = self.get_meta("ResponseGrade")
 	
@@ -23,11 +38,9 @@ func _on_button_player_response_pressed():
 		else:
 			Vars.Player.ContentCustomerList.append(Vars.Player.CurrentEnvelope)
 		
-		print(Vars.Player.CustomerComplaintList.is_empty())
-		print(Vars.Player.CustomerComplaintList.size())
-		
 		if Vars.Player.CustomerComplaintList.is_empty():
-			print("no more complaints")
+			CommonUtils.ToastNotifications.ShowToast("No more complaints left!")
+			get_tree().change_scene_to_file("res://Scenes/End.tscn")
 		else:
 			AnsweredGreeting = false
 			AnsweredDemand = false

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bc2bfnntfd00o"]
+[gd_scene load_steps=5 format=3 uid="uid://bc2bfnntfd00o"]
 
 [ext_resource type="Texture2D" uid="uid://333iate5qr36" path="res://Assets/Scenes/ScanningRoom/Spr_ScannerScreen_01.png" id="1_usrc8"]
 [ext_resource type="Script" path="res://Scripts/Utilities/ScanningRoomEvents.gd" id="1_xw8k4"]
 [ext_resource type="Texture2D" uid="uid://dndqnd6fa2t0n" path="res://Assets/Objects/Spr_package_01.png" id="2_03qdx"]
+[ext_resource type="FontFile" uid="uid://br16r50alhowl" path="res://Assets/Fonts/PressStart2P/PressStart2P.otf" id="4_7to8j"]
 
 [node name="ScanningRoom" type="Node2D"]
 script = ExtResource("1_xw8k4")
@@ -90,4 +91,80 @@ offset_left = -193.0
 offset_top = 268.0
 offset_right = -153.0
 offset_bottom = 308.0
+color = Color(1, 1, 1, 0)
+
+[node name="ToastNotificationControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ToastNotificationBackground" type="ColorRect" parent="ToastNotificationControl"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 313.0
+offset_top = 367.0
+offset_right = 634.0
+offset_bottom = 407.0
+color = Color(0.0823529, 0.619608, 0.0392157, 0.756863)
+
+[node name="ToastNotificationText" type="RichTextLabel" parent="ToastNotificationControl/ToastNotificationBackground"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -4.0
+offset_right = 92.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_7to8j")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ErrorToastNotificationBackground" type="ColorRect" parent="ToastNotificationControl"]
+unique_name_in_owner = true
+offset_left = 313.0
+offset_top = 367.0
+offset_right = 634.0
+offset_bottom = 407.0
+color = Color(0.815686, 0, 0, 0.756863)
+
+[node name="ErrorToastNotificationText" type="RichTextLabel" parent="ToastNotificationControl/ErrorToastNotificationBackground"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -4.0
+offset_right = 92.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_7to8j")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ToastNotificationDestination" type="ColorRect" parent="ToastNotificationControl"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 449.0
+offset_top = 307.0
+offset_right = 489.0
+offset_bottom = 347.0
 color = Color(1, 1, 1, 0)

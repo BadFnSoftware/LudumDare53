@@ -21,6 +21,9 @@ var TickerData: Ticks
 var XrayWaitTime := 1.25 # In seconds
 var XrayWaitTimeRemaining := XrayWaitTime
 
+var ToastWaitTime := 1.5 # In seconds
+var ToastWaitTimeRemaining := ToastWaitTime
+
 var NumEnvelopesSortedNode: Node
 var NumPackagesSortedNode: Node
 var NumSortingMistakesNode: Node
@@ -51,7 +54,7 @@ var WeeklyJobFuncs: WeeklyJobFuncsClass
 var MonthlyJobFuncs: MonthlyJobFuncsClass
 var YearlyJobFuncs: YearlyJobFuncsClass
 
-var UpdateJobs := []
+var UpdateJobs := [ "processToastNotifications" ]
 var TickJobs := [ "updateDisplayClock" ]
 var MinuteTickJobs := [ "updateDisplayClock" ]
 var HourlyTickJobs := []

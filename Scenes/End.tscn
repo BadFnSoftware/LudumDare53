@@ -1,0 +1,115 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2qsptrwwd67y"]
+
+[ext_resource type="Script" path="res://Scripts/Utilities/EndGameEvents.gd" id="1_3rj4v"]
+[ext_resource type="FontFile" uid="uid://br16r50alhowl" path="res://Assets/Fonts/PressStart2P/PressStart2P.otf" id="1_5xnxs"]
+
+[node name="End" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 363.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 112.0
+offset_right = 325.0
+offset_bottom = 152.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "The End!"
+fit_content = true
+scroll_active = false
+
+[node name="EndGameButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 219.0
+offset_right = 335.0
+offset_bottom = 250.0
+text = "End game"
+script = ExtResource("1_3rj4v")
+
+[node name="ToastNotificationControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ToastNotificationBackground" type="ColorRect" parent="ToastNotificationControl"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 313.0
+offset_top = 367.0
+offset_right = 634.0
+offset_bottom = 407.0
+color = Color(0.0823529, 0.619608, 0.0392157, 0.756863)
+
+[node name="ToastNotificationText" type="RichTextLabel" parent="ToastNotificationControl/ToastNotificationBackground"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -4.0
+offset_right = 92.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ErrorToastNotificationBackground" type="ColorRect" parent="ToastNotificationControl"]
+unique_name_in_owner = true
+offset_left = 313.0
+offset_top = 367.0
+offset_right = 634.0
+offset_bottom = 407.0
+color = Color(0.815686, 0, 0, 0.756863)
+
+[node name="ErrorToastNotificationText" type="RichTextLabel" parent="ToastNotificationControl/ErrorToastNotificationBackground"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -4.0
+offset_right = 92.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_5xnxs")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ToastNotificationDestination" type="ColorRect" parent="ToastNotificationControl"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 449.0
+offset_top = 307.0
+offset_right = 489.0
+offset_bottom = 347.0
+color = Color(1, 1, 1, 0)
+
+[connection signal="pressed" from="Control/EndGameButton" to="Control/EndGameButton" method="_on_end_game_button_pressed"]

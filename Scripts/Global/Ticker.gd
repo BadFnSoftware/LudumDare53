@@ -3,6 +3,8 @@ extends Node
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	Vars.TickerData.TickDelta = delta
+
 	if Vars.TickerData.GameInProgress:
 		if Vars.DEBUG == true && Vars.VERBOSE:
 			print(Vars.TickerData.Tick)

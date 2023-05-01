@@ -1,5 +1,7 @@
 extends Node
 
+var ToastNotifications: ToastNotificationsClass
+
 
 func getDirectoryContents(path):
 	var dir = DirAccess.open(path)

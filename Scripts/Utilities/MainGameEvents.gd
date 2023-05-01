@@ -10,6 +10,18 @@ var CustomerName: Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	CommonUtils.ToastNotifications = preload("res://Scripts/Utilities/ToastNotifications.gd").new()
+	CommonUtils.ToastNotifications.ToastNotifcationNode = get_node("%ToastNotificationBackground")
+	CommonUtils.ToastNotifications.ToastNotifcationTextNode = get_node("%ToastNotificationText")
+
+	CommonUtils.ToastNotifications.ErrorToastNotifcationNode = get_node("%ErrorToastNotificationBackground")
+	CommonUtils.ToastNotifications.ErrorToastNotifcationTextNode = get_node("%ErrorToastNotificationText")
+
+	CommonUtils.ToastNotifications.ToastNotifcationDestinationNode = get_node("%ToastNotificationDestination")
+
+	CommonUtils.ToastNotifications.ToastNotifcationStartingPosition = CommonUtils.ToastNotifications.ToastNotifcationNode.get_position()
+	CommonUtils.ToastNotifications.ToastNotifcationDestination = Vector2(CommonUtils.ToastNotifications.ToastNotifcationStartingPosition.x, CommonUtils.ToastNotifications.ToastNotifcationDestinationNode.get_position().y)
+
 	Envelope = get_node("%Envelope")
 	Package = get_node("%Package")
 	ReportPackageButton = get_node("%ReportPackageButton")
@@ -91,7 +103,7 @@ func _on_button_rack_slot_pressed():
 			Vars.EndPanel.visible = true
 			Vars.TickerData.GameInProgress = false
 	else:
-		print("No evelope available to sort!")
+		CommonUtils.ToastNotifications.ShowErrorToast("No evelopes available to sort!")
 
 
 func _on_sorting_bin_pressed():
@@ -109,9 +121,9 @@ func _on_sorting_bin_pressed():
 		else:
 			Envelope.visible = true
 	elif Vars.Player.CurrentEnvelope != null:
-		print("Need to sort the envelope before getting a new one!")
+		CommonUtils.ToastNotifications.ShowErrorToast("Need to sort what you got first!")
 	else:
-		print("No envelopes available!")
+		CommonUtils.ToastNotifications.ShowErrorToast("No envelopes available!")
 
 
 func _on_scanning_button_pressed():
@@ -137,6 +149,11 @@ func _on_report_package_button_pressed():
 	ReportPackageButton.visible = false
 	Package.visible = false
 	Vars.Player.CurrentEnvelope = null
+
+	if Vars.Player.NumEnvelopesAvail <= 0:
+		CommonUtils.setEndPanelDisplay()
+		Vars.EndPanel.visible = true
+		Vars.TickerData.GameInProgress = false
 
 
 func _on_end_shift_pressed():
