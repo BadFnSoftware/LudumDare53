@@ -176,3 +176,5 @@ func _on_end_shift_pressed():
 
 	if Vars.Player.NumDangerousPackageMistakes > 0 || Vars.Player.NumMistakes > 0 || Vars.Player.NumPackagesReportedMistakes > 0:
 		get_tree().change_scene_to_file("res://Scenes/CustomerService.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Scenes/End.tscn")
