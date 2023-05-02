@@ -91,6 +91,8 @@ func generateRandomCustomerDialogTree():
 		var rng = RandomNumberGenerator.new()
 		var index = rng.randi_range(0, maxRng)
 		var randomCustomer = Vars.Player.AvailCustomerDialogTrees[index]
+		
+		Vars.Player.AvailCustomerDialogTrees.remove_at(index)
 
 		return randomCustomer
 

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CustomerDialogTree" load_steps=2 format=3 uid="uid://cku64kyv5ledy"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/CustomerDialogTree.gd" id="1_absem"]
+
+[resource]
+script = ExtResource("1_absem")
+CustomerGreetingDialog = "Who's the mother fucker that lost my packages!"
+GreetingBestResponse = "I'm sorry, let me get my manager."
+GreetingGoodResponse = "I'm sorry, it was me. Let me help you find it!"
+GreetingBadResponse = "They quit."
+GreetingWorstResponse = "It was me fuckface!"
+CustomerDemandDialog = "I want your job for this!"
+DemandBestResponse = "Let me talk with my manager.."
+DemandGoodResponse = "I'm so sorry, please don't!"
+DemandBadResponse = "I wish I cared."
+DemandWorstResponse = "Please do, I hate this place!"

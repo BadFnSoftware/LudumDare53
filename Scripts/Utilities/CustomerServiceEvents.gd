@@ -4,9 +4,15 @@ extends Node
 var AnsweredGreeting := false
 var AnsweredDemand := false
 
+var SoundPlayerNode: Node
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SoundPlayerNode = get_node("%AudioStreamPlayer")
+	SoundController.playSound("buttonpress1", SoundPlayerNode)
+	SoundController.playSound("wahwah", SoundPlayerNode)
+
 	CommonUtils.ToastNotifications = preload("res://Scripts/Utilities/ToastNotifications.gd").new()
 	CommonUtils.ToastNotifications.ToastNotifcationNode = get_node("%ToastNotificationBackground")
 	CommonUtils.ToastNotifications.ToastNotifcationTextNode = get_node("%ToastNotificationText")

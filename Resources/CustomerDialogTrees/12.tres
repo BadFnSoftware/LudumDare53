@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CustomerDialogTree" load_steps=2 format=3 uid="uid://dukxflop046mj"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/CustomerDialogTree.gd" id="1_absem"]
+
+[resource]
+script = ExtResource("1_absem")
+CustomerGreetingDialog = "I'm a nigerian price, I was supposed to get a package on where to send my money."
+GreetingBestResponse = "I knew you always existed!"
+GreetingGoodResponse = "Of course!"
+GreetingBadResponse = "I thought that was just a scam?!?"
+GreetingWorstResponse = "*Hands them my info instead*"
+CustomerDemandDialog = "I demand a refund and to speak to your manager."
+DemandBestResponse = "Luckily I'm the manager, let me process a refund for you."
+DemandGoodResponse = "Sure."
+DemandBadResponse = "No."
+DemandWorstResponse = "GET THE FUCK OUTTA HERE AND DON'T COME BACK!!"

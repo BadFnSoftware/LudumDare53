@@ -3,9 +3,13 @@ extends Node
 var AnsweredGreeting := false
 var AnsweredDemand := false
 
+var SoundPlayerNode: Node
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SoundPlayerNode = get_node("%AudioStreamPlayer")
+
 	CommonUtils.ToastNotifications = preload("res://Scripts/Utilities/ToastNotifications.gd").new()
 	CommonUtils.ToastNotifications.ToastNotifcationNode = get_node("%ToastNotificationBackground")
 	CommonUtils.ToastNotifications.ToastNotifcationTextNode = get_node("%ToastNotificationText")
@@ -21,11 +25,13 @@ func _ready():
 
 func _on_button_player_response_pressed():
 	var ResponseGrade = self.get_meta("ResponseGrade")
-	
+
+	SoundController.playSound("buttonpress1", SoundPlayerNode)
+
 	if AnsweredGreeting == false && AnsweredDemand == false:
 		Vars.Player.CustomerGreetingResponseGrade = ResponseGrade
 		AnsweredGreeting = true
-	
+
 		CommonUtils.buildPlayerResponses("demand")
 	elif AnsweredGreeting == true && AnsweredDemand == false:
 		Vars.Player.CustomerDemandResponseGrade = ResponseGrade
@@ -37,11 +43,13 @@ func _on_button_player_response_pressed():
 			Vars.Player.AngryCustomerList.append(Vars.Player.CurrentEnvelope)
 		else:
 			Vars.Player.ContentCustomerList.append(Vars.Player.CurrentEnvelope)
-		
+
 		if Vars.Player.CustomerComplaintList.is_empty():
 			CommonUtils.ToastNotifications.ShowToast("No more complaints left!")
 			get_tree().change_scene_to_file("res://Scenes/End.tscn")
 		else:
+			SoundController.playSound("wahwah", SoundPlayerNode)
+
 			AnsweredGreeting = false
 			AnsweredDemand = false
 			CommonUtils.getNewRandomCustomer()

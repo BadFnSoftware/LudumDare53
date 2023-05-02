@@ -51,7 +51,6 @@ var EndGameOverallGrade: String
 var EndGameIsFired := false
 
 var ScanningButton: Node
-var ScanningButtonBackground: Node
 var ClockMinutesNode: Node
 var ClockSecondsNode: Node
 var CustomerModelNode: Node

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CustomerDialogTree" load_steps=2 format=3 uid="uid://c0ftg80wb1msg"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/CustomerDialogTree.gd" id="1_absem"]
+
+[resource]
+script = ExtResource("1_absem")
+CustomerGreetingDialog = "Welcome to the jungle."
+GreetingBestResponse = "Thank you?"
+GreetingGoodResponse = "Are you ok?"
+GreetingBadResponse = "*Walks away*"
+GreetingWorstResponse = "Just get the fuck outta here..."
+CustomerDemandDialog = "PUT ALL YOUR MONEY IN THE BAG!!"
+DemandBestResponse = "*Secretly notifies the police*"
+DemandGoodResponse = "*Attempts to disarm*"
+DemandBadResponse = "We don't have any!"
+DemandWorstResponse = "Sure thing! Can I have some too??"

@@ -14,11 +14,16 @@ var XrayElapsedTime := 0.0
 
 var PackageReachedScanner := false
 var HasScanned := false
+
 var PackageContentTexture: Resource
+var SoundPlayerNode: Node
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SoundPlayerNode = get_node("%AudioStreamPlayer")
+	SoundController.startSoundLoop("xraybelt", SoundPlayerNode)
+
 	CommonUtils.ToastNotifications = preload("res://Scripts/Utilities/ToastNotifications.gd").new()
 	CommonUtils.ToastNotifications.ToastNotifcationNode = get_node("%ToastNotificationBackground")
 	CommonUtils.ToastNotifications.ToastNotifcationTextNode = get_node("%ToastNotificationText")
@@ -52,6 +57,8 @@ func _process(delta):
 		Package.position = PackageStartingPosition.lerp(PackageDestination, ElapsedTime)
 	else:
 		if PackageReachedScanner == false:
+			SoundController.playSound("xrayloop", SoundPlayerNode)
+
 			PackageReachedScanner = true
 			ScannerOffOverlayNode.visible = false
 			ScannerOnOverlayNode.visible = true
@@ -59,6 +66,8 @@ func _process(delta):
 			PackageContentsNode.visible = true
 
 		if HasScanned == true:
+			SoundController.startSoundLoop("xraybelt", SoundPlayerNode)
+
 			PackageReachedScanner = true
 			ElapsedTime = 0.0
 			HasScanned = false

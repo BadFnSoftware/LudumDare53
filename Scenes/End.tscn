@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2qsptrwwd67y"]
+[gd_scene load_steps=4 format=3 uid="uid://b2qsptrwwd67y"]
 
+[ext_resource type="Texture2D" uid="uid://dmhj1rtc0rr3w" path="res://Assets/Scenes/End/Spr_EndScreen_01.png" id="1_2ckan"]
 [ext_resource type="Script" path="res://Scripts/Utilities/EndGameEvents.gd" id="1_3rj4v"]
 [ext_resource type="FontFile" uid="uid://br16r50alhowl" path="res://Assets/Fonts/PressStart2P/PressStart2P.otf" id="1_5xnxs"]
 
@@ -11,19 +12,22 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="Background" type="TextureRect" parent="Control"]
+texture_filter = 1
 layout_mode = 0
-offset_right = 640.0
-offset_bottom = 363.0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4, 4)
+texture = ExtResource("1_2ckan")
 
 [node name="OverallGradeLabel" type="RichTextLabel" parent="Control"]
 clip_contents = false
 layout_mode = 0
-offset_left = 205.0
-offset_top = 12.0
-offset_right = 401.0
-offset_bottom = 52.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 208.0
+offset_top = 93.0
+offset_right = 404.0
+offset_bottom = 133.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 14
 text = "Overall Grade:"
@@ -35,11 +39,11 @@ autowrap_mode = 0
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 0
-offset_left = 283.0
-offset_top = 46.0
-offset_right = 325.0
-offset_bottom = 88.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 508.0
+offset_top = 84.0
+offset_right = 550.0
+offset_bottom = 126.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 42
 fit_content = true
@@ -51,11 +55,11 @@ unique_name_in_owner = true
 visible = false
 clip_contents = false
 layout_mode = 0
-offset_left = 169.0
-offset_top = 106.0
-offset_right = 455.0
-offset_bottom = 146.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 193.0
+offset_top = 12.0
+offset_right = 479.0
+offset_bottom = 52.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 22
 text = "You're Fired!"
@@ -65,11 +69,11 @@ autowrap_mode = 0
 
 [node name="EnvelopesSorted" type="RichTextLabel" parent="Control"]
 layout_mode = 0
-offset_left = 121.0
-offset_top = 150.0
-offset_right = 248.0
-offset_bottom = 161.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 205.0
+offset_top = 163.0
+offset_right = 332.0
+offset_bottom = 174.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "Envelopes Sorted:"
@@ -80,11 +84,11 @@ autowrap_mode = 0
 [node name="NumEnvelopesSorted" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 439.0
-offset_top = 150.0
-offset_right = 572.0
-offset_bottom = 161.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 523.0
+offset_top = 163.0
+offset_right = 656.0
+offset_bottom = 174.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "0"
@@ -94,11 +98,11 @@ autowrap_mode = 0
 
 [node name="PackagesSorted" type="RichTextLabel" parent="Control"]
 layout_mode = 0
-offset_left = 121.0
-offset_top = 163.0
-offset_right = 233.0
-offset_bottom = 173.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 205.0
+offset_top = 176.0
+offset_right = 317.0
+offset_bottom = 186.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "Packages Sorted:"
@@ -109,11 +113,11 @@ autowrap_mode = 0
 [node name="NumPackagesSorted" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 439.0
-offset_top = 163.0
-offset_right = 572.0
-offset_bottom = 173.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 523.0
+offset_top = 176.0
+offset_right = 656.0
+offset_bottom = 186.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "0"
@@ -123,11 +127,11 @@ autowrap_mode = 0
 
 [node name="SortingMistakes" type="RichTextLabel" parent="Control"]
 layout_mode = 0
-offset_left = 121.0
-offset_top = 176.0
-offset_right = 240.0
-offset_bottom = 185.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 205.0
+offset_top = 189.0
+offset_right = 324.0
+offset_bottom = 198.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "Sorting Mistakes:"
@@ -138,11 +142,11 @@ autowrap_mode = 0
 [node name="NumSortingMistakes" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 439.0
-offset_top = 176.0
-offset_right = 573.0
-offset_bottom = 185.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 523.0
+offset_top = 189.0
+offset_right = 657.0
+offset_bottom = 198.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "0"
@@ -152,11 +156,11 @@ autowrap_mode = 0
 
 [node name="DangerousPackagesSorted" type="RichTextLabel" parent="Control"]
 layout_mode = 0
-offset_left = 121.0
-offset_top = 190.0
-offset_right = 303.0
-offset_bottom = 200.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 205.0
+offset_top = 203.0
+offset_right = 387.0
+offset_bottom = 213.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "Dangerous Packages Sorted:"
@@ -167,11 +171,11 @@ autowrap_mode = 0
 [node name="NumDangerousPackagesSorted" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 439.0
-offset_top = 190.0
-offset_right = 569.0
-offset_bottom = 200.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 523.0
+offset_top = 203.0
+offset_right = 653.0
+offset_bottom = 213.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "0"
@@ -181,11 +185,11 @@ autowrap_mode = 0
 
 [node name="DangerousPackageSortingMistakes" type="RichTextLabel" parent="Control"]
 layout_mode = 0
-offset_left = 121.0
-offset_top = 204.0
-offset_right = 366.0
-offset_bottom = 214.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 205.0
+offset_top = 217.0
+offset_right = 450.0
+offset_bottom = 227.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "Dangerous Package Sorting Mistakes:"
@@ -196,11 +200,11 @@ autowrap_mode = 0
 [node name="NumDangerousPackageSortingMistakes" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 439.0
-offset_top = 204.0
-offset_right = 570.0
-offset_bottom = 214.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 523.0
+offset_top = 217.0
+offset_right = 654.0
+offset_bottom = 227.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "0"
@@ -210,11 +214,11 @@ autowrap_mode = 0
 
 [node name="NotSorted" type="RichTextLabel" parent="Control"]
 layout_mode = 0
-offset_left = 121.0
-offset_top = 217.0
-offset_right = 366.0
-offset_bottom = 227.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 205.0
+offset_top = 230.0
+offset_right = 450.0
+offset_bottom = 240.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "Not Sorted:"
@@ -225,11 +229,11 @@ autowrap_mode = 0
 [node name="NumNotSorted" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 439.0
-offset_top = 217.0
-offset_right = 570.0
-offset_bottom = 227.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 523.0
+offset_top = 230.0
+offset_right = 654.0
+offset_bottom = 240.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "0"
@@ -239,11 +243,11 @@ autowrap_mode = 0
 
 [node name="PackagesReported" type="RichTextLabel" parent="Control"]
 layout_mode = 0
-offset_left = 121.0
-offset_top = 231.0
-offset_right = 366.0
-offset_bottom = 241.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 205.0
+offset_top = 244.0
+offset_right = 450.0
+offset_bottom = 254.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "Packages Reported:"
@@ -254,11 +258,11 @@ autowrap_mode = 0
 [node name="NumPackagesReported" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 439.0
-offset_top = 231.0
-offset_right = 570.0
-offset_bottom = 241.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 523.0
+offset_top = 244.0
+offset_right = 654.0
+offset_bottom = 254.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "0"
@@ -268,11 +272,11 @@ autowrap_mode = 0
 
 [node name="PackagesReportedMistakes" type="RichTextLabel" parent="Control"]
 layout_mode = 0
-offset_left = 121.0
-offset_top = 246.0
-offset_right = 366.0
-offset_bottom = 256.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 205.0
+offset_top = 259.0
+offset_right = 450.0
+offset_bottom = 269.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "Packages Reported Mistakes:"
@@ -283,11 +287,11 @@ autowrap_mode = 0
 [node name="NumPackagesReportedMistakes" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 439.0
-offset_top = 246.0
-offset_right = 570.0
-offset_bottom = 256.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 523.0
+offset_top = 259.0
+offset_right = 654.0
+offset_bottom = 269.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "0"
@@ -297,11 +301,11 @@ autowrap_mode = 0
 
 [node name="HappyCustomers" type="RichTextLabel" parent="Control"]
 layout_mode = 0
-offset_left = 121.0
-offset_top = 260.0
-offset_right = 366.0
-offset_bottom = 270.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 205.0
+offset_top = 273.0
+offset_right = 450.0
+offset_bottom = 283.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "Happy Customers:"
@@ -312,11 +316,11 @@ autowrap_mode = 0
 [node name="NumHappyCustomers" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 439.0
-offset_top = 260.0
-offset_right = 570.0
-offset_bottom = 270.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 523.0
+offset_top = 273.0
+offset_right = 654.0
+offset_bottom = 283.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "0"
@@ -326,11 +330,11 @@ autowrap_mode = 0
 
 [node name="ContentCustomers" type="RichTextLabel" parent="Control"]
 layout_mode = 0
-offset_left = 121.0
-offset_top = 273.0
-offset_right = 366.0
-offset_bottom = 283.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 205.0
+offset_top = 286.0
+offset_right = 450.0
+offset_bottom = 296.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "Content Customers:"
@@ -341,11 +345,11 @@ autowrap_mode = 0
 [node name="NumContentCustomers" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 439.0
-offset_top = 273.0
-offset_right = 570.0
-offset_bottom = 283.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 523.0
+offset_top = 286.0
+offset_right = 654.0
+offset_bottom = 296.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "0"
@@ -355,11 +359,11 @@ autowrap_mode = 0
 
 [node name="AngryCustomers" type="RichTextLabel" parent="Control"]
 layout_mode = 0
-offset_left = 121.0
-offset_top = 287.0
-offset_right = 366.0
-offset_bottom = 297.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 205.0
+offset_top = 300.0
+offset_right = 450.0
+offset_bottom = 310.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "Angry Customers:"
@@ -370,11 +374,11 @@ autowrap_mode = 0
 [node name="NumAngryCustomers" type="RichTextLabel" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 439.0
-offset_top = 287.0
-offset_right = 570.0
-offset_bottom = 297.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 523.0
+offset_top = 300.0
+offset_right = 654.0
+offset_bottom = 310.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_5xnxs")
 theme_override_font_sizes/normal_font_size = 7
 text = "0"
@@ -384,10 +388,10 @@ autowrap_mode = 0
 
 [node name="EndGameButton" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 264.0
-offset_top = 314.0
-offset_right = 348.0
-offset_bottom = 345.0
+offset_left = 31.0
+offset_top = 311.0
+offset_right = 115.0
+offset_bottom = 342.0
 text = "End game"
 script = ExtResource("1_3rj4v")
 
@@ -467,5 +471,9 @@ offset_top = 307.0
 offset_right = 489.0
 offset_bottom = 347.0
 color = Color(1, 1, 1, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -3)
 
 [connection signal="pressed" from="Control/EndGameButton" to="Control/EndGameButton" method="_on_end_game_button_pressed"]

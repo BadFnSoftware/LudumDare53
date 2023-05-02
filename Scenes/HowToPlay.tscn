@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxrkem5cxwf3y"]
+[gd_scene load_steps=3 format=3 uid="uid://cxrkem5cxwf3y"]
 
 [ext_resource type="Script" path="res://Scripts/Utilities/HowToPlayEvents.gd" id="1_aobqi"]
+[ext_resource type="Texture2D" uid="uid://cu01g2gksk67a" path="res://Assets/Scenes/HowTo/Spr_Tutorial_01.png" id="1_g0lyd"]
 
 [node name="HowToPlay" type="Node2D"]
 
@@ -20,13 +21,26 @@ offset_bottom = 320.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4, 4)
+texture = ExtResource("1_g0lyd")
+stretch_mode = 2
+
 [node name="StartGameButton" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 237.0
-offset_top = 296.0
-offset_right = 401.0
-offset_bottom = 327.0
+offset_left = 16.0
+offset_top = 313.0
+offset_right = 180.0
+offset_bottom = 344.0
 text = "Let me play already!"
 script = ExtResource("1_aobqi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -3)
 
 [connection signal="pressed" from="Control/StartGameButton" to="Control/StartGameButton" method="_on_start_game_button_pressed"]

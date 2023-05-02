@@ -6,10 +6,16 @@ var Package: Node
 var ReportPackageButton: Node
 var EnvelopeNamePanel: Node
 var CustomerName: Node
+var SoundPlayerNode: Node
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SoundPlayerNode = get_node("%AudioStreamPlayer")
+	
+	if Vars.Player.CurrentEnvelope == null:
+		SoundController.playSound("buttonpress1", SoundPlayerNode)
+
 	CommonUtils.ToastNotifications = preload("res://Scripts/Utilities/ToastNotifications.gd").new()
 	CommonUtils.ToastNotifications.ToastNotifcationNode = get_node("%ToastNotificationBackground")
 	CommonUtils.ToastNotifications.ToastNotifcationTextNode = get_node("%ToastNotificationText")
@@ -29,7 +35,6 @@ func _ready():
 	CustomerName = get_node("%CustomerName")
 
 	Vars.ScanningButton = get_node("%ScanningButton")
-	Vars.ScanningButtonBackground = get_node("%ScanningButtonBackground")
 	Vars.EndPanel = get_node("%EndPanel")
 	Vars.NumEnvelopesSortedNode = get_node("%NumEnvelopesSorted")
 	Vars.NumPackagesSortedNode = get_node("%NumPackagesSorted")
@@ -55,7 +60,6 @@ func _ready():
 
 		if Vars.Player.CurrentEnvelope.IsPackage == true:
 			Vars.ScanningButton.visible = false
-			Vars.ScanningButtonBackground.visible = false
 			Package.visible = true
 			ReportPackageButton.visible = true
 		else:
@@ -67,6 +71,8 @@ func _on_button_rack_slot_pressed():
 
 	if Vars.Player.CurrentEnvelope != null:
 		if Vars.Player.CurrentEnvelope.IsPackage == true:
+			SoundController.playSound("packageputdown", SoundPlayerNode)
+
 			if Vars.Player.CurrentEnvelope.IsDangerous == true:
 				Vars.Player.NumDangerousPackagesSorted += 1
 
@@ -85,10 +91,11 @@ func _on_button_rack_slot_pressed():
 					Vars.Player.HappyCustomerList.append(Vars.Player.CurrentEnvelope)
 
 			Vars.ScanningButton.visible = false
-			Vars.ScanningButtonBackground.visible = false
 			Package.visible = false
 			ReportPackageButton.visible = false
 		else:
+			SoundController.playSound("envelopeputdown", SoundPlayerNode)
+
 			Vars.Player.NumEnvelopesSorted += 1
 
 			if RackSlotId != Vars.Player.CurrentEnvelope.RackSlotId:
@@ -119,10 +126,11 @@ func _on_sorting_bin_pressed():
 		CustomerName.set_text(PlayerNameText)
 
 		if Vars.Player.CurrentEnvelope.IsPackage == true:
+			SoundController.playSound("packagepickup", SoundPlayerNode)
 			Vars.ScanningButton.visible = true
-			Vars.ScanningButtonBackground.visible = true
 			Package.visible = true
 		else:
+			SoundController.playSound("envelopepickup", SoundPlayerNode)
 			Envelope.visible = true
 	elif Vars.Player.CurrentEnvelope != null:
 		CommonUtils.ToastNotifications.ShowErrorToast("Need to sort what you got first!")
@@ -131,6 +139,7 @@ func _on_sorting_bin_pressed():
 
 
 func _on_scanning_button_pressed():
+	SoundController.playSound("buttonpress1", SoundPlayerNode)
 	Vars.TickerData.GameInProgress = false
 	get_tree().change_scene_to_file("res://Scenes/ScanningRoom.tscn")
 
@@ -144,6 +153,8 @@ func _on_envelope_button_down():
 
 
 func _on_report_package_button_pressed():
+	SoundController.playSound("buttonpress1", SoundPlayerNode)
+
 	Vars.Player.NumPackagesReported += 1
 	Vars.Player.CurrentEnvelope.Reported = true
 
@@ -161,5 +172,7 @@ func _on_report_package_button_pressed():
 
 
 func _on_end_shift_pressed():
+	SoundController.playSound("buttonpress1", SoundPlayerNode)
+
 	if Vars.Player.NumDangerousPackageMistakes > 0 || Vars.Player.NumMistakes > 0 || Vars.Player.NumPackagesReportedMistakes > 0:
 		get_tree().change_scene_to_file("res://Scenes/CustomerService.tscn")

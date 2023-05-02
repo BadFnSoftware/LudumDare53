@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nw0yc4iosvye"
-path="res://.godot/imported/Spr_xraybutton_pressed_01.png-d38cbad4625a9b6f47643f30c927eb3f.ctex"
+uid="uid://cu01g2gksk67a"
+path="res://.godot/imported/Spr_Tutorial_01.png-08f81cde8e8fca588e2d945da43198ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/MainGame/Buttons/Spr_xraybutton_pressed_01.png"
-dest_files=["res://.godot/imported/Spr_xraybutton_pressed_01.png-d38cbad4625a9b6f47643f30c927eb3f.ctex"]
+source_file="res://Assets/Scenes/HowTo/Spr_Tutorial_01.png"
+dest_files=["res://.godot/imported/Spr_Tutorial_01.png-08f81cde8e8fca588e2d945da43198ec.ctex"]
 
 [params]
 

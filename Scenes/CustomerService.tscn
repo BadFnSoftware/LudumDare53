@@ -297,6 +297,10 @@ offset_right = 489.0
 offset_bottom = 347.0
 color = Color(1, 1, 1, 0)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -3)
+
 [connection signal="pressed" from="Control/PlayerResponsePanel/BestResponseButton" to="Control/PlayerResponsePanel/BestResponseButton" method="_on_button_player_response_pressed"]
 [connection signal="pressed" from="Control/PlayerResponsePanel/GoodResponseButton" to="Control/PlayerResponsePanel/GoodResponseButton" method="_on_button_player_response_pressed"]
 [connection signal="pressed" from="Control/PlayerResponsePanel/BadResponseButton" to="Control/PlayerResponsePanel/BadResponseButton" method="_on_button_player_response_pressed"]

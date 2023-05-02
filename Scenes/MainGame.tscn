@@ -7,12 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://dndqnd6fa2t0n" path="res://Assets/Objects/Spr_package_01.png" id="6_2mtx8"]
 [ext_resource type="FontFile" uid="uid://br16r50alhowl" path="res://Assets/Fonts/PressStart2P/PressStart2P.otf" id="6_qrfyu"]
 [ext_resource type="Texture2D" uid="uid://qgf03wdhtcmt" path="res://Assets/UI/MainGame/Buttons/Spr_ReportButton_01.png" id="8_60bu8"]
-[ext_resource type="Texture2D" uid="uid://dquo0oks84jwl" path="res://Assets/UI/MainGame/Buttons/Spr_xraybutton_normal_01.png" id="8_p0x4u"]
+[ext_resource type="Texture2D" uid="uid://d1n2dcn7phhvg" path="res://Assets/UI/MainGame/Buttons/Spr_xraybutton_03.png" id="8_iqmxi"]
 [ext_resource type="Texture2D" uid="uid://d33t43ucypug8" path="res://Assets/UI/MainGame/Buttons/Spr_ReportButton_02.png" id="9_bjyt1"]
-[ext_resource type="Texture2D" uid="uid://nw0yc4iosvye" path="res://Assets/UI/MainGame/Buttons/Spr_xraybutton_pressed_01.png" id="9_dgwim"]
+[ext_resource type="Texture2D" uid="uid://dfbghqdagcae0" path="res://Assets/UI/MainGame/Buttons/Spr_xraybutton_04.png" id="9_p5ype"]
 [ext_resource type="Texture2D" uid="uid://3t7u025ccc2" path="res://Assets/Objects/Spr_Clock_02.png" id="10_5yegr"]
 
-[node name="Node2D" type="Node2D"]
+[node name="MainGame" type="Node2D"]
 script = ExtResource("1_y1lun")
 metadata/_edit_horizontal_guides_ = [189.0, 202.0, 215.0, 229.0, 243.0]
 metadata/_edit_vertical_guides_ = [156.0, 474.0]
@@ -202,16 +202,6 @@ scale = Vector2(3, 3)
 texture_normal = ExtResource("8_60bu8")
 texture_pressed = ExtResource("9_bjyt1")
 
-[node name="ScanningButtonBackground" type="ColorRect" parent="Control"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 0
-offset_left = 541.0
-offset_top = 253.0
-offset_right = 636.0
-offset_bottom = 358.0
-color = Color(0.345098, 0.345098, 0.345098, 1)
-
 [node name="ScanningButton" type="TextureButton" parent="Control"]
 unique_name_in_owner = true
 visible = false
@@ -222,8 +212,8 @@ offset_top = 262.0
 offset_right = 574.0
 offset_bottom = 295.0
 scale = Vector2(3, 3)
-texture_normal = ExtResource("8_p0x4u")
-texture_pressed = ExtResource("9_dgwim")
+texture_normal = ExtResource("8_iqmxi")
+texture_pressed = ExtResource("9_p5ype")
 
 [node name="Clock" type="TextureRect" parent="Control"]
 texture_filter = 1
@@ -272,10 +262,10 @@ unique_name_in_owner = true
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = 318.0
-offset_top = 166.0
-offset_right = 593.0
-offset_bottom = 256.0
+offset_left = 254.0
+offset_top = 126.0
+offset_right = 529.0
+offset_bottom = 216.0
 
 [node name="CustomerName" type="RichTextLabel" parent="Control/EnvelopeNamePanel"]
 unique_name_in_owner = true
@@ -646,6 +636,10 @@ offset_top = 307.0
 offset_right = 489.0
 offset_bottom = 347.0
 color = Color(1, 1, 1, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -3)
 
 [connection signal="pressed" from="Control/SortingBin" to="." method="_on_sorting_bin_pressed"]
 [connection signal="pressed" from="Control/ButtonXZ" to="Control/ButtonXZ" method="_on_button_rack_slot_pressed"]

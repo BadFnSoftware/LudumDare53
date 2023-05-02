@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CustomerDialogTree" load_steps=2 format=3 uid="uid://dnr6xa0a4o6ut"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/CustomerDialogTree.gd" id="1_absem"]
+
+[resource]
+script = ExtResource("1_absem")
+CustomerGreetingDialog = "I was hoping to find my missing pacakge."
+GreetingBestResponse = "I'm sorry it got lost, let's find that for you!"
+GreetingGoodResponse = "It's probably in the back somewhere."
+GreetingBadResponse = "I'm hoping for the same!"
+GreetingWorstResponse = "That's unfortunate."
+CustomerDemandDialog = "Can you please find my package?"
+DemandBestResponse = "Certainly!"
+DemandGoodResponse = "Will do in just a moment."
+DemandBadResponse = "Meh, I'm on my break."
+DemandWorstResponse = "Go find it yourself!"

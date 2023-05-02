@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CustomerDialogTree" load_steps=2 format=3 uid="uid://jxmmemm2ljvn"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/CustomerDialogTree.gd" id="1_absem"]
+
+[resource]
+script = ExtResource("1_absem")
+CustomerGreetingDialog = "I don't want to exist."
+GreetingBestResponse = "I'm sorry to hear that, anything I can do to help?"
+GreetingGoodResponse = "That's awful!"
+GreetingBadResponse = "Same tho"
+GreetingWorstResponse = "Then why don't you end it all?"
+CustomerDemandDialog = "Help me NOW!!"
+DemandBestResponse = "Of course, not a problem!"
+DemandGoodResponse = "Alright damn, calm down!"
+DemandBadResponse = "What if I don't want to?"
+DemandWorstResponse = "Not with that attitude!"

@@ -116,6 +116,10 @@ offset_right = 267.0
 offset_bottom = 219.0
 text = "Close Credits"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -3)
+
 [connection signal="pressed" from="Control/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Control/CreditsButton" to="." method="_on_open_credits_pressed"]
 [connection signal="pressed" from="Control/CreditsPanel/CloseCredits" to="." method="_on_close_credits_pressed"]

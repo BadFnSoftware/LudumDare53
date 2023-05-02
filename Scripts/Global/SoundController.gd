@@ -11,6 +11,7 @@ var PackagePickup: AudioStream
 var PackagePutDown: AudioStream
 var Pluck: AudioStream
 var Wah: AudioStream
+var WahWah: AudioStream
 var XrayBelt: AudioStream
 var XrayLoop: AudioStream
 
@@ -28,6 +29,7 @@ func _ready():
 	PackagePutDown = load(BaseSoundPath + "/package_putdown.wav")
 	Pluck = load(BaseSoundPath + "/pluck_sound.wav")
 	Wah = load(BaseSoundPath + "/wah.wav")
+	WahWah = load(BaseSoundPath + "/wahwah.wav")
 	XrayBelt = load(BaseSoundPath + "/xray_belt.wav")
 	XrayLoop = load(BaseSoundPath + "/xray_loop.wav")
 	
@@ -41,32 +43,22 @@ func _ready():
 		"packageputdown": PackagePutDown,
 		"pluck": Pluck,
 		"wah": Wah,
+		"wahwah": WahWah,
 		"xraybelt": XrayBelt,
 		"xrayloop": XrayLoop,
 	}
 
 
-func playSound(sound):
-	print(sound)
-	var Player = AudioStreamPlayer.new()
-	print(Player)
-	
-	Player.stream = AvailSounds[sound]
-	Player.play()
+func playSound(sound, player):
+	player.stream = AvailSounds[sound]
+	player.play()
 
 
-func startSoundLoop(sound):
-	var SoundPlayer = AudioStreamPlayer.new()
-
-	SoundPlayer.stream = sound
-	SoundPlayer.autoplay = true
-	SoundPlayer.loop = true
-
-	add_child(SoundPlayer)
+func startSoundLoop(sound, player):
+	player.stream = AvailSounds[sound]
+	player.play(0)
 
 
-func stop_sound_loop():
-	var SoundPlayer = get_node("AudioStreamPlayer")
-
-	SoundPlayer.stop()
-	SoundPlayer.queue_free()
+func stop_sound_loop(player):
+	player.stop()
+	player.queue_free()

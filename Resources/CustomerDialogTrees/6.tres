@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CustomerDialogTree" load_steps=2 format=3 uid="uid://1mnh6jwae0li"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/CustomerDialogTree.gd" id="1_absem"]
+
+[resource]
+script = ExtResource("1_absem")
+CustomerGreetingDialog = "I fell in the parking lot!"
+GreetingBestResponse = "Are you ok?!? Let me call for help!"
+GreetingGoodResponse = "That's awful, let me help you."
+GreetingBadResponse = "Sucks to suck!"
+GreetingWorstResponse = "*Laughs uncontrollably*"
+CustomerDemandDialog = "I want to talk to corporate, I'm going to get a lawyer!"
+DemandBestResponse = "Certainly, let me get my manager for you."
+DemandGoodResponse = "Here's the number."
+DemandBadResponse = "Awesome! Burn this puppy down!"
+DemandWorstResponse = "Good fucking luck with that!"

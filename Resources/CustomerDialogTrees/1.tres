@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CustomerDialogTree" load_steps=2 format=3 uid="uid://d347r83ttm6cb"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/CustomerDialogTree.gd" id="1_t4kn5"]
+
+[resource]
+script = ExtResource("1_t4kn5")
+CustomerGreetingDialog = "Where's my package?!"
+GreetingBestResponse = "Let me find that for you."
+GreetingGoodResponse = "It's somewhere around here..."
+GreetingBadResponse = "I don't know..."
+GreetingWorstResponse = "I threw it away."
+CustomerDemandDialog = "I demand my pacakge now!"
+DemandBestResponse = "I found it, here it is!"
+DemandGoodResponse = "Alright, let me find it for you."
+DemandBadResponse = "How does it feel to want?"
+DemandWorstResponse = "YOU DO NOT MAKE DEMANDS WITH ME BITCH! GTFO!!"
