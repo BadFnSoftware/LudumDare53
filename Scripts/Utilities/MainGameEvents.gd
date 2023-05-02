@@ -81,6 +81,7 @@ func _on_button_rack_slot_pressed():
 					Vars.Player.CustomerComplaintList.append(Vars.Player.CurrentEnvelope)
 				else:
 					Vars.Player.HappyCustomerList.append(Vars.Player.CurrentEnvelope)
+					Vars.Player.NumHappyCustomers += 1
 			else:
 				Vars.Player.NumPackagesSorted += 1
 
@@ -89,6 +90,7 @@ func _on_button_rack_slot_pressed():
 					Vars.Player.CustomerComplaintList.append(Vars.Player.CurrentEnvelope)
 				else:
 					Vars.Player.HappyCustomerList.append(Vars.Player.CurrentEnvelope)
+					Vars.Player.NumHappyCustomers += 1
 
 			Vars.ScanningButton.visible = false
 			Package.visible = false
@@ -103,6 +105,7 @@ func _on_button_rack_slot_pressed():
 				Vars.Player.CustomerComplaintList.append(Vars.Player.CurrentEnvelope)
 			else:
 				Vars.Player.HappyCustomerList.append(Vars.Player.CurrentEnvelope)
+				Vars.Player.NumHappyCustomers += 1
 
 			Envelope.visible = false 
 

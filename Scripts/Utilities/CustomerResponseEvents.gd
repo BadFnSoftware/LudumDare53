@@ -39,10 +39,13 @@ func _on_button_player_response_pressed():
 
 		if (Vars.Player.CustomerGreetingResponseGrade == "best" || Vars.Player.CustomerGreetingResponseGrade == "good") && (Vars.Player.CustomerDemandResponseGrade == "best" || Vars.Player.CustomerDemandResponseGrade == "good"):
 			Vars.Player.HappyCustomerList.append(Vars.Player.CurrentEnvelope)
+			Vars.Player.NumHappyCustomers += 1
 		elif (Vars.Player.CustomerGreetingResponseGrade == "worst" || Vars.Player.CustomerGreetingResponseGrade == "bad") && (Vars.Player.CustomerDemandResponseGrade == "worst" || Vars.Player.CustomerDemandResponseGrade == "bad"):
 			Vars.Player.AngryCustomerList.append(Vars.Player.CurrentEnvelope)
+			Vars.Player.NumAngryCustomers += 1
 		else:
 			Vars.Player.ContentCustomerList.append(Vars.Player.CurrentEnvelope)
+			Vars.Player.NumContentCustomers += 1
 
 		if Vars.Player.CustomerComplaintList.is_empty():
 			CommonUtils.ToastNotifications.ShowToast("No more complaints left!")

@@ -21,8 +21,15 @@ func _ready():
 	Vars.EndGameNumAngryCustomersNode = get_node("%NumAngryCustomers")
 	Vars.EndGameOverallGradeNode = get_node("%OverallGrade")
 	Vars.EndGameYourFiredTextNode = get_node("%YourFiredText")
+	
+	print(Vars.Player.NumContentCustomers)
+	print(Vars.Player.NumAngryCustomers)
+	print(Vars.Player.NumHappyCustomers)
+	print(Vars.Player.NumMistakes)
+	print(Vars.Player.NumDangerousPackageMistakes)
+	print(Vars.Player.NumTotalEnvelopes)
 
-	if Vars.Player.NumHappyCustomers == Vars.Player.NumTotalEnvelopes && Vars.Player.NumContentCustomers == 0 && Vars.Player.NumAngryCustomers == 0 && Vars.Player.NumMistakes == 0 && Vars.Player.NumDangerousPackageMistakes == 0:
+	if Vars.Player.NumContentCustomers == 0 && Vars.Player.NumAngryCustomers == 0 && Vars.Player.NumMistakes == 0 && Vars.Player.NumDangerousPackageMistakes == 0:
 		Vars.EndGameOverallGrade = "A"
 	elif Vars.Player.NumHappyCustomers > 0 && Vars.Player.NumContentCustomers >= 0 && Vars.Player.NumAngryCustomers == 0 && (Vars.Player.NumMistakes > 0 && Vars.Player.NumMistakes <= 2) && Vars.Player.NumDangerousPackageMistakes == 0:
 		Vars.EndGameOverallGrade = "B"
